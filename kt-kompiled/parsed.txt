@@ -964,14 +964,14 @@ module KSTRING$SYNTAX [org.kframework.attributes.Location(Location(15,1,18,9)) o
 endmodule
 
 
-module KT [org.kframework.attributes.Location(Location(16,1,22,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
+module KT [org.kframework.attributes.Location(Location(126,1,132,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
   imports KT-SYNTAX
   imports KT$SYNTAX
   imports DOMAINS
 endmodule
 
 
-module KT$SYNTAX [org.kframework.attributes.Location(Location(16,1,22,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
+module KT$SYNTAX [org.kframework.attributes.Location(Location(126,1,132,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
   imports KT-SYNTAX$SYNTAX
   imports DOMAINS$SYNTAX
   syntax KResult ::= Int
@@ -979,7 +979,7 @@ module KT$SYNTAX [org.kframework.attributes.Location(Location(16,1,22,9)) org.kf
 endmodule
 
 
-module KT-SYNTAX [org.kframework.attributes.Location(Location(1,1,14,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
+module KT-SYNTAX [org.kframework.attributes.Location(Location(1,1,124,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
   imports MAP
   imports KT-SYNTAX$SYNTAX
   imports DOMAINS
@@ -993,46 +993,102 @@ module KT-SYNTAX [org.kframework.attributes.Location(Location(1,1,14,9)) org.kfr
   rule initLocCell(.KList)=>`<loc>`(#noDots(.KList),#token("1","Int"),#noDots(.KList)) requires #token("true","Bool") ensures #token("true","Bool") [initializer()]
   rule initKCell(Init)=>`<k>`(#noDots(.KList),#SemanticCastToFun(`project:Fun`(`Map:lookup`(Init,#token("$PGM","KConfigVar")))),#noDots(.KList)) requires #token("true","Bool") ensures #token("true","Bool") [initializer()]
   rule initEnvCell(.KList)=>`<env>`(#noDots(.KList),`.Map`(.KList),#noDots(.KList)) requires #token("true","Bool") ensures #token("true","Bool") [initializer()]
-  Bubble(config,<T> 
-        <k> $PGM:Fun </k>
-        <env> .Map </env>
-        <store> .Map </store>
-        <loc> 1 </loc>
-     
-    </T>,[contentStartColumn(19) contentStartLine(6) org.kframework.attributes.Location(Location(6,5,12,8)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  rule `funmain(){_}_KT-SYNTAX_Fun_Block`(#SemanticCastToBlock(B))=>#SemanticCastToBlock(B) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(44) org.kframework.attributes.Location(Location(44,10,44,35)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]) structural()]
+  rule `__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))=>`Skip_KT-SYNTAX_Skip`(.KList) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(48) org.kframework.attributes.Location(Location(48,10,48,33)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule `__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))=>`Skip_KT-SYNTAX_Skip`(.KList) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(46) org.kframework.attributes.Location(Location(46,10,46,30)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule `__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))=>`Skip_KT-SYNTAX_Skip`(.KList) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(47) org.kframework.attributes.Location(Location(47,10,47,34)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule `_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)),#SemanticCastToString(_))=>`Skip_KT-SYNTAX_Skip`(.KList) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(51) org.kframework.attributes.Location(Location(51,10,51,44)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule `_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)),#SemanticCastToBool(_))=>`Skip_KT-SYNTAX_Skip`(.KList) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(50) org.kframework.attributes.Location(Location(50,10,50,43)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule `_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)),#SemanticCastToInt(_))=>`Skip_KT-SYNTAX_Skip`(.KList) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(49) org.kframework.attributes.Location(Location(49,10,49,38)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule `Skip_KT-SYNTAX_Skip`(.KList)=>.K requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(42) org.kframework.attributes.Location(Location(42,10,42,19)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)))=>`Skip_KT-SYNTAX_Skip`(.KList),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#token("\" \"","String"))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(69) org.kframework.attributes.Location(Location(69,10,72,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)))=>`Skip_KT-SYNTAX_Skip`(.KList),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#token("0","Int"))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(59) org.kframework.attributes.Location(Location(59,10,62,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),#SemanticCastToIds(Xs)))=>`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),#SemanticCastToIds(Xs)),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#token("0","Int"))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(74) org.kframework.attributes.Location(Location(74,10,77,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)))=>`Skip_KT-SYNTAX_Skip`(.KList),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#token("false","Bool"))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(64) org.kframework.attributes.Location(Location(64,10,67,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))),#SemanticCastToString(V))=>`Skip_KT-SYNTAX_Skip`(.KList),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#SemanticCastToString(V))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(89) org.kframework.attributes.Location(Location(89,10,92,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),#SemanticCastToIds(Xs))),#SemanticCastToString(V))=>`_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),#SemanticCastToIds(Xs)),#SemanticCastToString(V)),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#SemanticCastToString(V))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(104) org.kframework.attributes.Location(Location(104,10,107,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))),#SemanticCastToBool(V))=>`Skip_KT-SYNTAX_Skip`(.KList),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#SemanticCastToBool(V))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(84) org.kframework.attributes.Location(Location(84,10,87,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),#SemanticCastToIds(Xs))),#SemanticCastToBool(V))=>`_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),#SemanticCastToIds(Xs)),#SemanticCastToBool(V)),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#SemanticCastToBool(V))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(99) org.kframework.attributes.Location(Location(99,10,102,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))),#SemanticCastToInt(V))=>`Skip_KT-SYNTAX_Skip`(.KList),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#SemanticCastToInt(V))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(79) org.kframework.attributes.Location(Location(79,10,82,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  rule #cells(#cells(#cells(`<k>`(#noDots(.KList),`_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(#SemanticCastToId(I),#SemanticCastToIds(Xs))),#SemanticCastToInt(V))=>`_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),#SemanticCastToIds(Xs)),#SemanticCastToInt(V)),#dots(.KList)),`<env>`(#noDots(.KList),#SemanticCastToMap(MEnv)=>`_Map_`(#SemanticCastToMap(MEnv),`_|->_`(#SemanticCastToId(I),#SemanticCastToInt(L))),#noDots(.KList))),`<store>`(#noDots(.KList),#SemanticCastToMap(MStore)=>`_Map_`(#SemanticCastToMap(MStore),`_|->_`(#SemanticCastToInt(L),#SemanticCastToInt(V))),#noDots(.KList))),`<loc>`(#noDots(.KList),#SemanticCastToInt(L)=>`_+Int_`(#SemanticCastToInt(L),#token("1","Int")),#noDots(.KList))) requires #token("true","Bool") ensures #token("true","Bool") [contentStartColumn(10) contentStartLine(94) org.kframework.attributes.Location(Location(94,10,97,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  ModuleComment(| VarMod Ids VarType,[org.kframework.attributes.Location(Location(26,25,26,47)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(| SExp,[org.kframework.attributes.Location(Location(15,17,15,25)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(| BExp,[org.kframework.attributes.Location(Location(14,17,14,25)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(rule Vm:VarMod .Ids T:VarType => Skip,[org.kframework.attributes.Location(Location(52,5,52,45)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(rule <k> Vm:VarMod I:Id T:VarType => Skip ... </k>
+        <env> MEnv:Map => MEnv I |-> L </env>
+        <store> MStore:Map => MStore L |-> 0 </store>
+        <loc> L:Int => L +Int 1 </loc>,[org.kframework.attributes.Location(Location(109,5,112,40)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo String com valor informado,[org.kframework.attributes.Location(Location(89,59,89,92)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo String com valor informado [Mult],[org.kframework.attributes.Location(Location(104,78,104,118)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo String com auto valor,[org.kframework.attributes.Location(Location(69,47,69,75)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo Int com valor informado,[org.kframework.attributes.Location(Location(79,53,79,83)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo Int com valor informado [Mult],[org.kframework.attributes.Location(Location(94,72,94,109)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo Int com auto valor,[org.kframework.attributes.Location(Location(59,44,59,69)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo Int com auto valor [Mult],[org.kframework.attributes.Location(Location(74,60,74,92)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo Boolean com valor informado,[org.kframework.attributes.Location(Location(84,58,84,92)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo Boolean com valor informado [Mult],[org.kframework.attributes.Location(Location(99,81,99,122)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment(Tipo Boolean com auto valor,[org.kframework.attributes.Location(Location(64,48,64,77)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment( REWRITE RULES ,[org.kframework.attributes.Location(Location(40,5,40,23)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment( MEMORY ALLOCATION RULES ,[org.kframework.attributes.Location(Location(57,5,57,33)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment( CONFIGURATIONS ,[org.kframework.attributes.Location(Location(114,5,114,24)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+  ModuleComment( ARITHMETHIC EXPRESSIONS RULES ,[org.kframework.attributes.Location(Location(54,5,54,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
 endmodule
 
 
-module KT-SYNTAX$SYNTAX [org.kframework.attributes.Location(Location(1,1,14,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
+module KT-SYNTAX$SYNTAX [org.kframework.attributes.Location(Location(1,1,124,9)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))]
   imports MAP$SYNTAX
   imports DOMAINS$SYNTAX
+  syntax VarType ::= "String"
+  syntax VarType ::= "Int"
+  syntax VarType ::= "Boolean"
+  syntax VarMod ::= "var"
+  syntax VarMod ::= "val"
+  syntax VarDeclaration ::= VarMod Ids "String"
+  syntax VarDeclaration ::= VarMod Ids "Int"
+  syntax VarDeclaration ::= VarMod Ids "Boolean"
   syntax TCellFragment ::= "<T>-fragment" KCellOpt EnvCellOpt StoreCellOpt LocCellOpt "</T>-fragment" [cellFragment(TCell)]
   syntax TCell ::= "initTCell" "(" Map ")" [function() initializer() noThread()]
-  syntax TCell ::= "<T>" KCell EnvCell StoreCell LocCell "</T>" [cell() cellName(T) contentStartColumn(19) contentStartLine(6) format(%1%i%n%2%n%3%n%4%n%5%d%n%6) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]) topcell()]
+  syntax TCell ::= "<T>" KCell EnvCell StoreCell LocCell "</T>" [cell() cellName(T) contentStartColumn(19) contentStartLine(116) format(%1%i%n%2%n%3%n%4%n%5%d%n%6) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]) topcell()]
   syntax StoreCellOpt ::= StoreCell
   syntax StoreCellOpt ::= "noStoreCell" [cellOptAbsent(StoreCell)]
   syntax StoreCell ::= "initStoreCell" [function() initializer() noThread()]
-  syntax StoreCell ::= "<store>" Map "</store>" [cell() cellName(store) contentStartColumn(19) contentStartLine(6) format(%1%i%n%2%d%n%3) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  syntax StoreCell ::= "<store>" Map "</store>" [cell() cellName(store) contentStartColumn(19) contentStartLine(116) format(%1%i%n%2%d%n%3) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  syntax Stmt ::= VarDeclaration
+  syntax Stmt ::= Skip
+  syntax Stmt ::= Assigner
+  syntax Stmt ::= AExp
+  syntax Skip ::= "Skip"
+  syntax SExp ::= String
   syntax LocCellOpt ::= LocCell
   syntax LocCellOpt ::= "noLocCell" [cellOptAbsent(LocCell)]
   syntax LocCell ::= "initLocCell" [function() initializer() noThread()]
-  syntax LocCell ::= "<loc>" Int "</loc>" [cell() cellName(loc) contentStartColumn(19) contentStartLine(6) format(%1%i%n%2%d%n%3) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  syntax LocCell ::= "<loc>" Int "</loc>" [cell() cellName(loc) contentStartColumn(19) contentStartLine(116) format(%1%i%n%2%d%n%3) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
   syntax KCellOpt ::= KCell
   syntax KCellOpt ::= "noKCell" [cellOptAbsent(KCell)]
   syntax KCell ::= "initKCell" "(" Map ")" [function() initializer() noThread()]
-  syntax KCell ::= "<k>" K "</k>" [cell() cellName(k) contentStartColumn(19) contentStartLine(6) format(%1%i%n%2%d%n%3) maincell() org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
-  syntax Fun ::= "fun" "main" "(" ")" "{" "}"
+  syntax KCell ::= "<k>" K "</k>" [cell() cellName(k) contentStartColumn(19) contentStartLine(116) format(%1%i%n%2%d%n%3) maincell() org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  syntax Ids ::= Id "," Ids [right() userList(*)]
+  syntax Ids ::= ".Ids" [klabel(.List{"_,__KT-SYNTAX"}) userList(*)]
+  syntax Fun ::= "fun" "main" "(" ")" "{" Block "}"
   syntax EnvCellOpt ::= EnvCell
   syntax EnvCellOpt ::= "noEnvCell" [cellOptAbsent(EnvCell)]
   syntax EnvCell ::= "initEnvCell" [function() initializer() noThread()]
-  syntax EnvCell ::= "<env>" Map "</env>" [cell() cellName(env) contentStartColumn(19) contentStartLine(6) format(%1%i%n%2%d%n%3) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  syntax EnvCell ::= "<env>" Map "</env>" [cell() cellName(env) contentStartColumn(19) contentStartLine(116) format(%1%i%n%2%d%n%3) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  syntax Block ::= Stmt
+  syntax Block ::= "{" Stmt "}"
+  syntax BExp ::= Bool
+  syntax Assigner ::= VarDeclaration "=" SExp
+  syntax Assigner ::= VarDeclaration "=" BExp
+  syntax Assigner ::= VarDeclaration "=" AExp
+  syntax AExp ::= Int
   Bubble(config,<T> 
         <k> $PGM:Fun </k>
         <env> .Map </env>
         <store> .Map </store>
         <loc> 1 </loc>
      
-    </T>,[contentStartColumn(19) contentStartLine(6) org.kframework.attributes.Location(Location(6,5,12,8)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
+    </T>,[contentStartColumn(19) contentStartLine(116) org.kframework.attributes.Location(Location(116,5,122,8)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k))])
 endmodule
 
 

@@ -65,37 +65,48 @@ module KT
 
 // sorts
   sort SortStoreCellOpt{} []
+  sort SortIds{} []
   sort SortTCellFragment{} []
   sort SortStoreCell{} []
   sort SortKCellOpt{} []
   sort SortEnvCell{} []
   sort SortFun{} []
+  sort SortVarType{} []
   sort SortIOInt{} []
   sort SortLocCellOpt{} []
   sort SortGeneratedTopCellFragment{} []
   sort SortIOFile{} []
   hooked-sort SortList{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), element{}(LblListItem{}()), concat{}(Lbl'Unds'List'Unds'{}()), unit{}(Lbl'Stop'List{}()), hook{}("LIST.List"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(227,3,227,31)")]
+  sort SortSkip{} []
   sort SortKCell{} []
   sort SortEnvCellOpt{} []
   sort SortGeneratedTopCell{} []
   sort SortGeneratedCounterCell{} []
   hooked-sort SortFloat{} [org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(483,3,483,34)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), hook{}("FLOAT.Float"), hasDomainValues{}()]
   sort SortTCellOpt{} []
+  sort SortAExp{} []
   hooked-sort SortMap{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), element{}(Lbl'UndsPipe'-'-GT-Unds'{}()), concat{}(Lbl'Unds'Map'Unds'{}()), unit{}(Lbl'Stop'Map{}()), hook{}("MAP.Map"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(97,3,97,28)")]
   hooked-sort SortString{} [org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(564,3,564,37)"), hook{}("STRING.String"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), hasDomainValues{}()]
   sort SortIOString{} []
   sort SortId{} [token{}(), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(826,3,826,19)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), hasDomainValues{}()]
+  sort SortBlock{} []
   sort SortGeneratedCounterCellOpt{} []
   sort SortKConfigVar{} [org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(12,3,12,27)"), token{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/kast.k)"), hasDomainValues{}()]
+  sort SortBExp{} []
   hooked-sort SortInt{} [hook{}("INT.Int"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(357,3,357,28)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), hasDomainValues{}()]
   sort SortIOError{} []
   hooked-sort SortSet{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), element{}(LblSetItem{}()), concat{}(Lbl'Unds'Set'Unds'{}()), unit{}(Lbl'Stop'Set{}()), hook{}("SET.Set"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(189,3,189,28)")]
   sort SortLocCell{} []
+  sort SortVarDeclaration{} []
+  sort SortSExp{} []
   sort SortKResult{} []
   sort SortStream{} []
   sort SortCell{} []
   sort SortTCell{} []
+  sort SortVarMod{} []
+  sort SortStmt{} []
   hooked-sort SortBool{} [hook{}("BOOL.Bool"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(301,3,301,31)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), hasDomainValues{}()]
+  sort SortAssigner{} []
 
 // symbols
   symbol Lbl'Hash'E2BIG{}() : SortIOError{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}("#E2BIG"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(908,22,908,54)"), injective{}()]
@@ -206,22 +217,25 @@ module KT
   hooked-symbol Lbl'Hash'unlock'LParUndsCommUndsRParUnds'K-IO'Unds'K'Unds'Int'Unds'Int{}(SortInt{}, SortInt{}) : SortK{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), impure{}(), hook{}("IO.unlock"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(993,16,993,94)"), function{}()]
   hooked-symbol Lbl'Hash'write'LParUndsCommUndsRParUnds'K-IO'Unds'K'Unds'Int'Unds'String{}(SortInt{}, SortString{}) : SortK{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), impure{}(), hook{}("IO.write"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(991,16,991,92)"), function{}()]
   hooked-symbol Lbl'Stop'List{}() : SortList{} [latex{}("\\dotCt{List}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), smtlib{}("smt_seq_nil"), klabel{}(".List"), hook{}("LIST.unit"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(262,19,262,146)"), function{}()]
+  symbol Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}() : SortIds{} [functional{}(), constructor{}(), userList{}("*"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), klabel{}(".List{\"_,__KT-SYNTAX\"}"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(28,20,28,32)"), injective{}()]
   hooked-symbol Lbl'Stop'Map{}() : SortMap{} [latex{}("\\dotCt{Map}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}(".Map"), hook{}("MAP.unit"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(107,18,107,128)"), function{}()]
   hooked-symbol Lbl'Stop'Set{}() : SortSet{} [latex{}("\\dotCt{Set}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}(".Set"), hook{}("SET.unit"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(197,18,197,122)"), function{}()]
-  symbol Lbl'-LT-'T'-GT-'{}(SortKCell{}, SortEnvCell{}, SortStoreCell{}, SortLocCell{}) : SortTCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("T"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("6"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(6,19,12,9)"), format{}("%1%i%n%2%n%3%n%4%n%5%d%n%6"), injective{}(), cell{}(), topcell{}()]
+  symbol Lbl'-LT-'T'-GT-'{}(SortKCell{}, SortEnvCell{}, SortStoreCell{}, SortLocCell{}) : SortTCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("T"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("116"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(116,19,122,9)"), format{}("%1%i%n%2%n%3%n%4%n%5%d%n%6"), injective{}(), cell{}(), topcell{}()]
   symbol Lbl'-LT-'T'-GT-'-fragment{}(SortKCellOpt{}, SortEnvCellOpt{}, SortStoreCellOpt{}, SortLocCellOpt{}) : SortTCellFragment{} [cellFragment{}("TCell"), constructor{}(), functional{}(), injective{}()]
-  symbol Lbl'-LT-'env'-GT-'{}(SortMap{}) : SortEnvCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("env"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("6"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(6,19,12,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
+  symbol Lbl'-LT-'env'-GT-'{}(SortMap{}) : SortEnvCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("env"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("116"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(116,19,122,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
   symbol Lbl'-LT-'generatedCounter'-GT-'{}(SortInt{}) : SortGeneratedCounterCell{} [functional{}(), constructor{}(), cellName{}("generatedCounter"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
   symbol Lbl'-LT-'generatedTop'-GT-'{}(SortTCell{}, SortGeneratedCounterCell{}) : SortGeneratedTopCell{} [functional{}(), constructor{}(), cellName{}("generatedTop"), format{}("%2"), injective{}(), cell{}(), topcell{}()]
   symbol Lbl'-LT-'generatedTop'-GT-'-fragment{}(SortTCellOpt{}, SortGeneratedCounterCellOpt{}) : SortGeneratedTopCellFragment{} [cellFragment{}("GeneratedTopCell"), constructor{}(), functional{}(), injective{}()]
-  symbol Lbl'-LT-'k'-GT-'{}(SortK{}) : SortKCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("k"), maincell{}(), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("6"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(6,19,12,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
-  symbol Lbl'-LT-'loc'-GT-'{}(SortInt{}) : SortLocCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("loc"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("6"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(6,19,12,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
-  symbol Lbl'-LT-'store'-GT-'{}(SortMap{}) : SortStoreCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("store"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("6"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(6,19,12,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
+  symbol Lbl'-LT-'k'-GT-'{}(SortK{}) : SortKCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("k"), maincell{}(), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("116"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(116,19,122,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
+  symbol Lbl'-LT-'loc'-GT-'{}(SortInt{}) : SortLocCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("loc"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("116"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(116,19,122,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
+  symbol Lbl'-LT-'store'-GT-'{}(SortMap{}) : SortStoreCell{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), cellName{}("store"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("116"), contentStartColumn{}("19"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(116,19,122,9)"), format{}("%1%i%n%2%d%n%3"), injective{}(), cell{}()]
   hooked-symbol LblBase2String'LParUndsCommUndsRParUnds'STRING'Unds'String'Unds'Int'Unds'Int{}(SortInt{}, SortInt{}) : SortString{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("Base2String"), hook{}("STRING.base2string"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(593,21,593,98)"), function{}()]
+  symbol LblBoolean'Unds'KT-SYNTAX'Unds'VarType{}() : SortVarType{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(18,23,18,31)"), injective{}()]
   hooked-symbol LblFloat2String'LParUndsRParUnds'STRING'Unds'String'Unds'Float{}(SortFloat{}) : SortString{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("Float2String"), hook{}("STRING.float2string"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(588,21,588,105)"), function{}()]
   hooked-symbol LblFloat2String'LParUndsCommUndsRParUnds'STRING'Unds'String'Unds'Float'Unds'String{}(SortFloat{}, SortString{}) : SortString{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("FloatFormat"), hook{}("STRING.floatFormat"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(589,21,589,121)"), function{}()]
   hooked-symbol LblId2String'LParUndsRParUnds'ID-SYNTAX'Unds'String'Unds'Id{}(SortId{}) : SortString{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("Id2String"), hook{}("STRING.token2string"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(828,21,828,89)"), function{}()]
   hooked-symbol LblInt2String'LParUndsRParUnds'STRING'Unds'String'Unds'Int{}(SortInt{}) : SortString{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("Int2String"), hook{}("STRING.int2string"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(592,21,592,103)"), function{}()]
+  symbol LblInt'Unds'KT-SYNTAX'Unds'VarType{}() : SortVarType{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(17,24,17,28)"), injective{}()]
   hooked-symbol LblList'Coln'get{}(SortList{}, SortInt{}) : SortKItem{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}("List:get"), hook{}("LIST.get"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(270,20,270,98)"), function{}()]
   hooked-symbol LblList'Coln'range{}(SortList{}, SortInt{}, SortInt{}) : SortList{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}("List:range"), hook{}("LIST.range"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(281,19,281,119)"), function{}()]
   hooked-symbol LblListItem{}(SortKItem{}) : SortList{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), smtlib{}("smt_seq_elem"), klabel{}("ListItem"), hook{}("LIST.element"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(265,19,265,136)"), function{}()]
@@ -230,15 +244,18 @@ module KT
   hooked-symbol LblSet'Coln'difference{}(SortSet{}, SortSet{}) : SortSet{} [latex{}("{#1}-_{\\it Set}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}("Set:difference"), hook{}("SET.difference"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(208,18,208,146)"), function{}()]
   hooked-symbol LblSet'Coln'in{}(SortKItem{}, SortSet{}) : SortBool{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}("Set:in"), hook{}("SET.in"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(211,19,211,106)"), function{}()]
   hooked-symbol LblSetItem{}(SortKItem{}) : SortSet{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), klabel{}("SetItem"), hook{}("SET.element"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(202,18,202,112)"), function{}()]
+  symbol LblSkip'Unds'KT-SYNTAX'Unds'Skip{}() : SortSkip{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(6,21,6,26)"), injective{}()]
   hooked-symbol LblString2Base'LParUndsCommUndsRParUnds'STRING'Unds'Int'Unds'String'Unds'Int{}(SortString{}, SortInt{}) : SortInt{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("String2Base"), hook{}("STRING.string2base"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(594,21,594,98)"), function{}()]
   hooked-symbol LblString2Float'LParUndsRParUnds'STRING'Unds'Float'Unds'String{}(SortString{}) : SortFloat{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("String2Float"), hook{}("STRING.string2float"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(590,21,590,93)"), function{}()]
   hooked-symbol LblString2Id'LParUndsRParUnds'ID-SYNTAX'Unds'Id'Unds'String{}(SortString{}) : SortId{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("String2Id"), hook{}("STRING.string2token"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(829,17,829,84)"), function{}()]
   hooked-symbol LblString2Int'LParUndsRParUnds'STRING'Unds'Int'Unds'String{}(SortString{}) : SortInt{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("String2Int"), hook{}("STRING.string2int"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(591,21,591,91)"), function{}()]
+  symbol LblString'Unds'KT-SYNTAX'Unds'VarType{}() : SortVarType{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(19,23,19,30)"), injective{}()]
   hooked-symbol Lbl'UndsPerc'Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{\\%_{\\scriptstyle\\it Int}}{#2}"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("mod"), klabel{}("_%Int_"), hook{}("INT.tmod"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(378,18,378,170)"), function{}()]
   hooked-symbol Lbl'UndsAnd-'Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{\\&_{\\scriptstyle\\it Int}}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smtlib{}("andInt"), klabel{}("_&Int_"), hook{}("INT.and"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(389,18,389,182)"), function{}()]
   hooked-symbol Lbl'UndsStar'Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{\\ast_{\\scriptstyle\\it Int}}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("*"), klabel{}("_*Int_"), hook{}("INT.mul"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(374,18,374,181)"), function{}()]
   hooked-symbol Lbl'UndsPlus'Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{+_{\\scriptstyle\\it Int}}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("+"), klabel{}("_+Int_"), hook{}("INT.add"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(383,18,383,178)"), function{}()]
   hooked-symbol Lbl'UndsPlus'String'UndsUnds'STRING'Unds'String'Unds'String'Unds'String{}(SortString{}, SortString{}) : SortString{} [latex{}("{#1}+_{\\scriptstyle\\it String}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), hook{}("STRING.concat"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(574,21,574,139)"), function{}()]
+  symbol Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(SortId{}, SortIds{}) : SortIds{} [functional{}(), constructor{}(), userList{}("*"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), right{}(), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(28,20,28,32)"), injective{}()]
   hooked-symbol Lbl'Unds'-Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{-_{\\scriptstyle\\it Int}}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("-"), klabel{}("_-Int_"), hook{}("INT.sub"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(384,18,384,178)"), function{}()]
   hooked-symbol Lbl'Unds'-Map'UndsUnds'MAP'Unds'Map'Unds'Map'Unds'Map{}(SortMap{}, SortMap{}) : SortMap{} [latex{}("{#1}-_{\\it Map}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), hook{}("MAP.difference"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(130,18,130,120)"), function{}()]
   hooked-symbol Lbl'UndsSlsh'Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{\\div_{\\scriptstyle\\it Int}}{#2}"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("div"), klabel{}("_/Int_"), hook{}("INT.tdiv"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(377,18,377,172)"), function{}()]
@@ -257,6 +274,9 @@ module KT
   hooked-symbol Lbl'UndsEqlsEqls'Int'Unds'{}(SortInt{}, SortInt{}) : SortBool{} [latex{}("{#1}\\mathrel{{=}{=}_{\\scriptstyle\\it Int}}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("="), klabel{}("_==Int_"), hook{}("INT.eq"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(407,19,407,177)"), function{}()]
   hooked-symbol Lbl'UndsEqlsEqls'K'Unds'{}(SortK{}, SortK{}) : SortBool{} [latex{}("{#1}\\mathrel{=_K}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), smt-hook{}("="), equalEqualK{}(), klabel{}("_==K_"), hook{}("KEQUAL.eq"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(852,19,852,156)"), function{}()]
   hooked-symbol Lbl'UndsEqlsEqls'String'UndsUnds'STRING'Unds'Bool'Unds'String'Unds'String{}(SortString{}, SortString{}) : SortBool{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), hook{}("STRING.eq"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(576,19,576,88)"), function{}()]
+  symbol Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(SortVarDeclaration{}, SortAExp{}) : SortAssigner{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(30,25,30,47)"), injective{}()]
+  symbol Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(SortVarDeclaration{}, SortBExp{}) : SortAssigner{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(31,23,31,45)"), injective{}()]
+  symbol Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(SortVarDeclaration{}, SortSExp{}) : SortAssigner{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(32,23,32,45)"), injective{}()]
   hooked-symbol Lbl'Unds-GT-Eqls'Int'Unds'{}(SortInt{}, SortInt{}) : SortBool{} [latex{}("{#1}\\mathrel{\\geq_{\\scriptstyle\\it Int}}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}(">="), klabel{}("_>=Int_"), hook{}("INT.ge"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(405,19,405,176)"), function{}()]
   hooked-symbol Lbl'Unds-GT-Eqls'String'UndsUnds'STRING'Unds'Bool'Unds'String'Unds'String{}(SortString{}, SortString{}) : SortBool{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), hook{}("STRING.ge"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(609,19,609,82)"), function{}()]
   hooked-symbol Lbl'Unds-GT--GT-'Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{\\gg_{\\scriptstyle\\it Int}}{#2}"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smtlib{}("shrInt"), klabel{}("_>>Int_"), hook{}("INT.shr"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(386,18,386,172)"), function{}()]
@@ -270,6 +290,9 @@ module KT
   hooked-symbol Lbl'UndsLSqBUndsRSqB'orDefault'UndsUnds'MAP'Unds'KItem'Unds'Map'Unds'KItem'Unds'KItem{}(SortMap{}, SortKItem{}, SortKItem{}) : SortKItem{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("Map:lookupOrDefault"), hook{}("MAP.lookupOrDefault"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(120,20,120,138)"), function{}()]
   hooked-symbol Lbl'UndsXor-Perc'Int'UndsUnds'{}(SortInt{}, SortInt{}, SortInt{}) : SortInt{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("(mod (^ #1 #2) #3)"), klabel{}("_^%Int__"), hook{}("INT.powmod"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(372,18,372,138)"), function{}()]
   hooked-symbol Lbl'UndsXor-'Int'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [latex{}("{#1}\\mathrel{{\\char`\\^}_{\\!\\scriptstyle\\it Int}}{#2}"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("^"), klabel{}("_^Int_"), hook{}("INT.pow"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(371,18,371,177)"), function{}()]
+  symbol Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(SortVarMod{}, SortIds{}) : SortVarDeclaration{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(24,27,24,46)"), injective{}()]
+  symbol Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(SortVarMod{}, SortIds{}) : SortVarDeclaration{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(23,31,23,46)"), injective{}()]
+  symbol Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(SortVarMod{}, SortIds{}) : SortVarDeclaration{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(25,27,25,45)"), injective{}()]
   hooked-symbol Lbl'Unds'andBool'Unds'{}(SortBool{}, SortBool{}) : SortBool{} [latex{}("{#1}\\wedge_{\\scriptstyle\\it Bool}{#2}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("and"), boolOperation{}(), klabel{}("_andBool_"), hook{}("BOOL.and"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(310,19,310,189)"), function{}()]
   hooked-symbol Lbl'Unds'andThenBool'Unds'{}(SortBool{}, SortBool{}) : SortBool{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("and"), boolOperation{}(), klabel{}("_andThenBool_"), hook{}("BOOL.andThen"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(311,19,311,151)"), function{}()]
   hooked-symbol Lbl'Unds'divInt'Unds'{}(SortInt{}, SortInt{}) : SortInt{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), left{}(), symbol'Kywd'{}(), smt-hook{}("div"), klabel{}("_divInt_"), hook{}("INT.ediv"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(380,18,380,121)"), function{}()]
@@ -297,7 +320,7 @@ module KT
   hooked-symbol LblfindString'LParUndsCommUndsCommUndsRParUnds'STRING'Unds'Int'Unds'String'Unds'String'Unds'Int{}(SortString{}, SortString{}, SortInt{}) : SortInt{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("findString"), hook{}("STRING.find"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(583,18,583,110)"), function{}()]
   symbol LblfreshId'LParUndsRParUnds'ID-SYNTAX'Unds'Id'Unds'Int{}(SortInt{}) : SortId{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), freshGenerator{}(), klabel{}("freshId"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(830,17,830,70)"), function{}()]
   symbol LblfreshInt'LParUndsRParUnds'INT'Unds'Int'Unds'Int{}(SortInt{}) : SortInt{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), freshGenerator{}(), klabel{}("freshInt"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(475,18,475,72)"), function{}()]
-  symbol Lblfunmain'LParRParLBraRBraUnds'KT-SYNTAX'Unds'Fun{}() : SortFun{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(4,20,4,47)"), injective{}()]
+  symbol Lblfunmain'LParRParLBraUndsRBraUnds'KT-SYNTAX'Unds'Fun'Unds'Block{}(SortBlock{}) : SortFun{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(4,20,4,53)"), injective{}()]
   symbol LblgetGeneratedCounterCell{}(SortGeneratedTopCell{}) : SortGeneratedCounterCell{} [function{}()]
   hooked-symbol LblgetKLabel'LParUndsRParUnds'K-REFLECTION'Unds'KItem'Unds'K{}(SortK{}) : SortKItem{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("getKLabel"), hook{}("KREFLECTION.getKLabel"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(875,20,875,72)"), function{}()]
   symbol LblinitEnvCell{}() : SortEnvCell{} [initializer{}(), function{}(), noThread{}()]
@@ -308,6 +331,10 @@ module KT
   symbol LblinitStoreCell{}() : SortStoreCell{} [initializer{}(), function{}(), noThread{}()]
   symbol LblinitTCell{}(SortMap{}) : SortTCell{} [initializer{}(), function{}(), noThread{}()]
   hooked-symbol LblintersectSet'LParUndsCommUndsRParUnds'SET'Unds'Set'Unds'Set'Unds'Set{}(SortSet{}, SortSet{}) : SortSet{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("intersectSet"), hook{}("SET.intersection"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(205,18,205,88)"), function{}()]
+  symbol LblisAExp{}(SortK{}) : SortBool{} [function{}(), predicate{}("AExp")]
+  symbol LblisAssigner{}(SortK{}) : SortBool{} [function{}(), predicate{}("Assigner")]
+  symbol LblisBExp{}(SortK{}) : SortBool{} [function{}(), predicate{}("BExp")]
+  symbol LblisBlock{}(SortK{}) : SortBool{} [function{}(), predicate{}("Block")]
   symbol LblisBool{}(SortK{}) : SortBool{} [function{}(), predicate{}("Bool")]
   symbol LblisCell{}(SortK{}) : SortBool{} [function{}(), predicate{}("Cell")]
   symbol LblisEnvCell{}(SortK{}) : SortBool{} [function{}(), predicate{}("EnvCell")]
@@ -323,6 +350,7 @@ module KT
   symbol LblisIOInt{}(SortK{}) : SortBool{} [function{}(), predicate{}("IOInt")]
   symbol LblisIOString{}(SortK{}) : SortBool{} [function{}(), predicate{}("IOString")]
   symbol LblisId{}(SortK{}) : SortBool{} [function{}(), predicate{}("Id")]
+  symbol LblisIds{}(SortK{}) : SortBool{} [function{}(), predicate{}("Ids")]
   symbol LblisInt{}(SortK{}) : SortBool{} [function{}(), predicate{}("Int")]
   symbol LblisK{}(SortK{}) : SortBool{} [function{}(), predicate{}("K")]
   symbol LblisKCell{}(SortK{}) : SortBool{} [function{}(), predicate{}("KCell")]
@@ -334,7 +362,10 @@ module KT
   symbol LblisLocCell{}(SortK{}) : SortBool{} [function{}(), predicate{}("LocCell")]
   symbol LblisLocCellOpt{}(SortK{}) : SortBool{} [function{}(), predicate{}("LocCellOpt")]
   symbol LblisMap{}(SortK{}) : SortBool{} [function{}(), predicate{}("Map")]
+  symbol LblisSExp{}(SortK{}) : SortBool{} [function{}(), predicate{}("SExp")]
   symbol LblisSet{}(SortK{}) : SortBool{} [function{}(), predicate{}("Set")]
+  symbol LblisSkip{}(SortK{}) : SortBool{} [function{}(), predicate{}("Skip")]
+  symbol LblisStmt{}(SortK{}) : SortBool{} [function{}(), predicate{}("Stmt")]
   symbol LblisStoreCell{}(SortK{}) : SortBool{} [function{}(), predicate{}("StoreCell")]
   symbol LblisStoreCellOpt{}(SortK{}) : SortBool{} [function{}(), predicate{}("StoreCellOpt")]
   symbol LblisStream{}(SortK{}) : SortBool{} [function{}(), predicate{}("Stream")]
@@ -342,6 +373,9 @@ module KT
   symbol LblisTCell{}(SortK{}) : SortBool{} [function{}(), predicate{}("TCell")]
   symbol LblisTCellFragment{}(SortK{}) : SortBool{} [function{}(), predicate{}("TCellFragment")]
   symbol LblisTCellOpt{}(SortK{}) : SortBool{} [function{}(), predicate{}("TCellOpt")]
+  symbol LblisVarDeclaration{}(SortK{}) : SortBool{} [function{}(), predicate{}("VarDeclaration")]
+  symbol LblisVarMod{}(SortK{}) : SortBool{} [function{}(), predicate{}("VarMod")]
+  symbol LblisVarType{}(SortK{}) : SortBool{} [function{}(), predicate{}("VarType")]
   hooked-symbol Lblkeys'LParUndsRParUnds'MAP'Unds'Set'Unds'Map{}(SortMap{}) : SortSet{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("keys"), hook{}("MAP.keys"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(141,18,141,86)"), function{}()]
   hooked-symbol Lblkeys'Unds'list'LParUndsRParUnds'MAP'Unds'List'Unds'Map{}(SortMap{}) : SortList{} [hook{}("MAP.keys_list"), function{}(), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(142,19,142,79)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)")]
   hooked-symbol LbllengthString'LParUndsRParUnds'STRING'Unds'Int'Unds'String{}(SortString{}) : SortInt{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("lengthString"), hook{}("STRING.length"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(578,18,578,84)"), function{}()]
@@ -361,6 +395,10 @@ module KT
   symbol Lblproject'ColnHash'tempFile'Coln'fd{}(SortIOFile{}) : SortInt{} [function{}()]
   symbol Lblproject'ColnHash'tempFile'Coln'path{}(SortIOFile{}) : SortString{} [function{}()]
   symbol Lblproject'ColnHash'unknownIOError'Coln'errno{}(SortIOError{}) : SortInt{} [function{}()]
+  symbol Lblproject'Coln'AExp{}(SortK{}) : SortAExp{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'Assigner{}(SortK{}) : SortAssigner{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'BExp{}(SortK{}) : SortBExp{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'Block{}(SortK{}) : SortBlock{} [function{}(), projection{}()]
   symbol Lblproject'Coln'Bool{}(SortK{}) : SortBool{} [function{}(), projection{}()]
   symbol Lblproject'Coln'Cell{}(SortK{}) : SortCell{} [function{}(), projection{}()]
   symbol Lblproject'Coln'EnvCell{}(SortK{}) : SortEnvCell{} [function{}(), projection{}()]
@@ -376,6 +414,7 @@ module KT
   symbol Lblproject'Coln'IOInt{}(SortK{}) : SortIOInt{} [function{}(), projection{}()]
   symbol Lblproject'Coln'IOString{}(SortK{}) : SortIOString{} [function{}(), projection{}()]
   symbol Lblproject'Coln'Id{}(SortK{}) : SortId{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'Ids{}(SortK{}) : SortIds{} [function{}(), projection{}()]
   symbol Lblproject'Coln'Int{}(SortK{}) : SortInt{} [function{}(), projection{}()]
   symbol Lblproject'Coln'KCell{}(SortK{}) : SortKCell{} [function{}(), projection{}()]
   symbol Lblproject'Coln'KCellOpt{}(SortK{}) : SortKCellOpt{} [function{}(), projection{}()]
@@ -385,7 +424,10 @@ module KT
   symbol Lblproject'Coln'LocCell{}(SortK{}) : SortLocCell{} [function{}(), projection{}()]
   symbol Lblproject'Coln'LocCellOpt{}(SortK{}) : SortLocCellOpt{} [function{}(), projection{}()]
   symbol Lblproject'Coln'Map{}(SortK{}) : SortMap{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'SExp{}(SortK{}) : SortSExp{} [function{}(), projection{}()]
   symbol Lblproject'Coln'Set{}(SortK{}) : SortSet{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'Skip{}(SortK{}) : SortSkip{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'Stmt{}(SortK{}) : SortStmt{} [function{}(), projection{}()]
   symbol Lblproject'Coln'StoreCell{}(SortK{}) : SortStoreCell{} [function{}(), projection{}()]
   symbol Lblproject'Coln'StoreCellOpt{}(SortK{}) : SortStoreCellOpt{} [function{}(), projection{}()]
   symbol Lblproject'Coln'Stream{}(SortK{}) : SortStream{} [function{}(), projection{}()]
@@ -393,6 +435,9 @@ module KT
   symbol Lblproject'Coln'TCell{}(SortK{}) : SortTCell{} [function{}(), projection{}()]
   symbol Lblproject'Coln'TCellFragment{}(SortK{}) : SortTCellFragment{} [function{}(), projection{}()]
   symbol Lblproject'Coln'TCellOpt{}(SortK{}) : SortTCellOpt{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'VarDeclaration{}(SortK{}) : SortVarDeclaration{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'VarMod{}(SortK{}) : SortVarMod{} [function{}(), projection{}()]
+  symbol Lblproject'Coln'VarType{}(SortK{}) : SortVarType{} [function{}(), projection{}()]
   hooked-symbol LblrandInt'LParUndsRParUnds'INT'Unds'Int'Unds'Int{}(SortInt{}) : SortInt{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("randInt"), hook{}("INT.rand"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(478,18,478,56)"), function{}()]
   hooked-symbol LblremoveAll'LParUndsCommUndsRParUnds'MAP'Unds'Map'Unds'Map'Unds'Set{}(SortMap{}, SortSet{}) : SortMap{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("removeAll"), hook{}("MAP.removeAll"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(138,18,138,91)"), function{}()]
   hooked-symbol Lblreplace'LParUndsCommUndsCommUndsCommUndsRParUnds'STRING'Unds'String'Unds'String'Unds'String'Unds'String'Unds'Int{}(SortString{}, SortString{}, SortString{}, SortInt{}) : SortString{} [hook{}("STRING.replace"), function{}(), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(598,21,598,145)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)")]
@@ -408,7 +453,10 @@ module KT
   hooked-symbol LblsubstrString'LParUndsCommUndsCommUndsRParUnds'STRING'Unds'String'Unds'String'Unds'Int'Unds'Int{}(SortString{}, SortInt{}, SortInt{}) : SortString{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("substrString"), hook{}("STRING.substr"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(582,21,582,121)"), function{}()]
   hooked-symbol LblupdateList'LParUndsCommUndsCommUndsRParUnds'LIST'Unds'List'Unds'List'Unds'Int'Unds'List{}(SortList{}, SortInt{}, SortList{}) : SortList{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("updateList"), hook{}("LIST.updateAll"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(276,19,276,96)"), function{}()]
   hooked-symbol LblupdateMap'LParUndsCommUndsRParUnds'MAP'Unds'Map'Unds'Map'Unds'Map{}(SortMap{}, SortMap{}) : SortMap{} [functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("updateMap"), hook{}("MAP.updateAll"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(135,18,135,91)"), function{}()]
+  symbol Lblval'Unds'KT-SYNTAX'Unds'VarMod{}() : SortVarMod{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(21,31,21,35)"), injective{}()]
   hooked-symbol Lblvalues'LParUndsRParUnds'MAP'Unds'List'Unds'Map{}(SortMap{}) : SortList{} [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), klabel{}("values"), hook{}("MAP.values"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(147,19,147,76)"), function{}()]
+  symbol Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}() : SortVarMod{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(21,23,21,27)"), injective{}()]
+  symbol Lbl'LBraUndsRBraUnds'KT-SYNTAX'Unds'Block'Unds'Stmt{}(SortStmt{}) : SortBlock{} [functional{}(), constructor{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(8,22,8,33)"), injective{}()]
   hooked-symbol Lbl'Tild'Int'Unds'{}(SortInt{}) : SortInt{} [latex{}("\\mathop{\\sim_{\\scriptstyle\\it Int}}{#1}"), functional{}(), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), symbol'Kywd'{}(), smtlib{}("notInt"), klabel{}("~Int_"), hook{}("INT.not"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(369,18,369,172)"), function{}()]
 
 // generated axioms
@@ -418,34 +466,50 @@ module KT
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortString{}, SortKItem{}} (From:SortString{}))) [subsort{SortString{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKResult{}, \equals{SortKResult{}, R} (Val:SortKResult{}, inj{SortInt{}, SortKResult{}} (From:SortInt{}))) [subsort{SortInt{}, SortKResult{}}()] // subsort
   axiom{R} \exists{R} (Val:SortCell{}, \equals{SortCell{}, R} (Val:SortCell{}, inj{SortLocCell{}, SortCell{}} (From:SortLocCell{}))) [subsort{SortLocCell{}, SortCell{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortAExp{}, SortKItem{}} (From:SortAExp{}))) [subsort{SortAExp{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortTCell{}, SortKItem{}} (From:SortTCell{}))) [subsort{SortTCell{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortSExp{}, SortKItem{}} (From:SortSExp{}))) [subsort{SortSExp{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortKCellOpt{}, SortKItem{}} (From:SortKCellOpt{}))) [subsort{SortKCellOpt{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortIds{}, SortKItem{}} (From:SortIds{}))) [subsort{SortIds{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortGeneratedCounterCellOpt{}, SortKItem{}} (From:SortGeneratedCounterCellOpt{}))) [subsort{SortGeneratedCounterCellOpt{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortKResult{}, SortKItem{}} (From:SortKResult{}))) [subsort{SortKResult{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortGeneratedCounterCellOpt{}, \equals{SortGeneratedCounterCellOpt{}, R} (Val:SortGeneratedCounterCellOpt{}, inj{SortGeneratedCounterCell{}, SortGeneratedCounterCellOpt{}} (From:SortGeneratedCounterCell{}))) [subsort{SortGeneratedCounterCell{}, SortGeneratedCounterCellOpt{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortBExp{}, \equals{SortBExp{}, R} (Val:SortBExp{}, inj{SortBool{}, SortBExp{}} (From:SortBool{}))) [subsort{SortBool{}, SortBExp{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortEnvCellOpt{}, SortKItem{}} (From:SortEnvCellOpt{}))) [subsort{SortEnvCellOpt{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortKCell{}, SortKItem{}} (From:SortKCell{}))) [subsort{SortKCell{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortTCellOpt{}, SortKItem{}} (From:SortTCellOpt{}))) [subsort{SortTCellOpt{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortStmt{}, \equals{SortStmt{}, R} (Val:SortStmt{}, inj{SortVarDeclaration{}, SortStmt{}} (From:SortVarDeclaration{}))) [subsort{SortVarDeclaration{}, SortStmt{}}()] // subsort
   axiom{R} \exists{R} (Val:SortLocCellOpt{}, \equals{SortLocCellOpt{}, R} (Val:SortLocCellOpt{}, inj{SortLocCell{}, SortLocCellOpt{}} (From:SortLocCell{}))) [subsort{SortLocCell{}, SortLocCellOpt{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortLocCell{}, SortKItem{}} (From:SortLocCell{}))) [subsort{SortLocCell{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortIOInt{}, \equals{SortIOInt{}, R} (Val:SortIOInt{}, inj{SortIOError{}, SortIOInt{}} (From:SortIOError{}))) [subsort{SortIOError{}, SortIOInt{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKCellOpt{}, \equals{SortKCellOpt{}, R} (Val:SortKCellOpt{}, inj{SortKCell{}, SortKCellOpt{}} (From:SortKCell{}))) [subsort{SortKCell{}, SortKCellOpt{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortStmt{}, \equals{SortStmt{}, R} (Val:SortStmt{}, inj{SortSkip{}, SortStmt{}} (From:SortSkip{}))) [subsort{SortSkip{}, SortStmt{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortSet{}, SortKItem{}} (From:SortSet{}))) [subsort{SortSet{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortStoreCell{}, SortKItem{}} (From:SortStoreCell{}))) [subsort{SortStoreCell{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortIOError{}, SortKItem{}} (From:SortIOError{}))) [subsort{SortIOError{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortBlock{}, SortKItem{}} (From:SortBlock{}))) [subsort{SortBlock{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortCell{}, \equals{SortCell{}, R} (Val:SortCell{}, inj{SortEnvCell{}, SortCell{}} (From:SortEnvCell{}))) [subsort{SortEnvCell{}, SortCell{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortVarMod{}, SortKItem{}} (From:SortVarMod{}))) [subsort{SortVarMod{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortGeneratedCounterCell{}, SortKItem{}} (From:SortGeneratedCounterCell{}))) [subsort{SortGeneratedCounterCell{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortIOInt{}, \equals{SortIOInt{}, R} (Val:SortIOInt{}, inj{SortInt{}, SortIOInt{}} (From:SortInt{}))) [subsort{SortInt{}, SortIOInt{}}()] // subsort
   axiom{R} \exists{R} (Val:SortTCellOpt{}, \equals{SortTCellOpt{}, R} (Val:SortTCellOpt{}, inj{SortTCell{}, SortTCellOpt{}} (From:SortTCell{}))) [subsort{SortTCell{}, SortTCellOpt{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortAssigner{}, SortKItem{}} (From:SortAssigner{}))) [subsort{SortAssigner{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortTCellFragment{}, SortKItem{}} (From:SortTCellFragment{}))) [subsort{SortTCellFragment{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortStmt{}, \equals{SortStmt{}, R} (Val:SortStmt{}, inj{SortAExp{}, SortStmt{}} (From:SortAExp{}))) [subsort{SortAExp{}, SortStmt{}}()] // subsort
   axiom{R} \exists{R} (Val:SortCell{}, \equals{SortCell{}, R} (Val:SortCell{}, inj{SortTCell{}, SortCell{}} (From:SortTCell{}))) [subsort{SortTCell{}, SortCell{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortStream{}, SortKItem{}} (From:SortStream{}))) [subsort{SortStream{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortIOFile{}, SortKItem{}} (From:SortIOFile{}))) [subsort{SortIOFile{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortSExp{}, \equals{SortSExp{}, R} (Val:SortSExp{}, inj{SortString{}, SortSExp{}} (From:SortString{}))) [subsort{SortString{}, SortSExp{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortGeneratedTopCell{}, SortKItem{}} (From:SortGeneratedTopCell{}))) [subsort{SortGeneratedTopCell{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortStmt{}, \equals{SortStmt{}, R} (Val:SortStmt{}, inj{SortAssigner{}, SortStmt{}} (From:SortAssigner{}))) [subsort{SortAssigner{}, SortStmt{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortVarType{}, SortKItem{}} (From:SortVarType{}))) [subsort{SortVarType{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortAExp{}, \equals{SortAExp{}, R} (Val:SortAExp{}, inj{SortInt{}, SortAExp{}} (From:SortInt{}))) [subsort{SortInt{}, SortAExp{}}()] // subsort
   axiom{R} \exists{R} (Val:SortEnvCellOpt{}, \equals{SortEnvCellOpt{}, R} (Val:SortEnvCellOpt{}, inj{SortEnvCell{}, SortEnvCellOpt{}} (From:SortEnvCell{}))) [subsort{SortEnvCell{}, SortEnvCellOpt{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortIOInt{}, SortKItem{}} (From:SortIOInt{}))) [subsort{SortIOInt{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortStoreCellOpt{}, \equals{SortStoreCellOpt{}, R} (Val:SortStoreCellOpt{}, inj{SortStoreCell{}, SortStoreCellOpt{}} (From:SortStoreCell{}))) [subsort{SortStoreCell{}, SortStoreCellOpt{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortVarDeclaration{}, SortKItem{}} (From:SortVarDeclaration{}))) [subsort{SortVarDeclaration{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortFun{}, SortKItem{}} (From:SortFun{}))) [subsort{SortFun{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortSkip{}, SortKItem{}} (From:SortSkip{}))) [subsort{SortSkip{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortList{}, SortKItem{}} (From:SortList{}))) [subsort{SortList{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortIOString{}, \equals{SortIOString{}, R} (Val:SortIOString{}, inj{SortString{}, SortIOString{}} (From:SortString{}))) [subsort{SortString{}, SortIOString{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortId{}, SortKItem{}} (From:SortId{}))) [subsort{SortId{}, SortKItem{}}()] // subsort
@@ -455,8 +519,11 @@ module KT
   axiom{R} \exists{R} (Val:SortCell{}, \equals{SortCell{}, R} (Val:SortCell{}, inj{SortKCell{}, SortCell{}} (From:SortKCell{}))) [subsort{SortKCell{}, SortCell{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortInt{}, SortKItem{}} (From:SortInt{}))) [subsort{SortInt{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortGeneratedTopCellFragment{}, SortKItem{}} (From:SortGeneratedTopCellFragment{}))) [subsort{SortGeneratedTopCellFragment{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortBExp{}, SortKItem{}} (From:SortBExp{}))) [subsort{SortBExp{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortEnvCell{}, SortKItem{}} (From:SortEnvCell{}))) [subsort{SortEnvCell{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortStmt{}, SortKItem{}} (From:SortStmt{}))) [subsort{SortStmt{}, SortKItem{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, inj{SortMap{}, SortKItem{}} (From:SortMap{}))) [subsort{SortMap{}, SortKItem{}}()] // subsort
+  axiom{R} \exists{R} (Val:SortBlock{}, \equals{SortBlock{}, R} (Val:SortBlock{}, inj{SortStmt{}, SortBlock{}} (From:SortStmt{}))) [subsort{SortStmt{}, SortBlock{}}()] // subsort
   axiom{R} \exists{R} (Val:SortKResult{}, \equals{SortKResult{}, R} (Val:SortKResult{}, inj{SortBool{}, SortKResult{}} (From:SortBool{}))) [subsort{SortBool{}, SortKResult{}}()] // subsort
   axiom{R} \exists{R} (Val:SortIOString{}, \equals{SortIOString{}, R} (Val:SortIOString{}, inj{SortIOError{}, SortIOString{}} (From:SortIOError{}))) [subsort{SortIOError{}, SortIOString{}}()] // subsort
   axiom{R} \exists{R} (Val:SortIOFile{}, \equals{SortIOFile{}, R} (Val:SortIOFile{}, inj{SortIOError{}, SortIOFile{}} (From:SortIOError{}))) [subsort{SortIOError{}, SortIOFile{}}()] // subsort
@@ -3032,6 +3099,8 @@ module KT
   axiom{R} \exists{R} (Val:SortIOError{}, \equals{SortIOError{}, R} (Val:SortIOError{}, Lbl'Hash'unknownIOError{}(K0:SortInt{}))) [functional{}()] // functional
   axiom{}\implies{SortIOError{}} (\and{SortIOError{}} (Lbl'Hash'unknownIOError{}(X0:SortInt{}), Lbl'Hash'unknownIOError{}(Y0:SortInt{})), Lbl'Hash'unknownIOError{}(\and{SortInt{}} (X0:SortInt{}, Y0:SortInt{}))) [constructor{}()] // no confusion same constructor
   axiom{R} \exists{R} (Val:SortList{}, \equals{SortList{}, R} (Val:SortList{}, Lbl'Stop'List{}())) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortIds{}, \equals{SortIds{}, R} (Val:SortIds{}, Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}())) [functional{}()] // functional
+  axiom{}\not{SortIds{}} (\and{SortIds{}} (Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}(), Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(Y0:SortId{}, Y1:SortIds{}))) [constructor{}()] // no confusion different constructors
   axiom{R} \exists{R} (Val:SortMap{}, \equals{SortMap{}, R} (Val:SortMap{}, Lbl'Stop'Map{}())) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortSet{}, \equals{SortSet{}, R} (Val:SortSet{}, Lbl'Stop'Set{}())) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortTCell{}, \equals{SortTCell{}, R} (Val:SortTCell{}, Lbl'-LT-'T'-GT-'{}(K0:SortKCell{}, K1:SortEnvCell{}, K2:SortStoreCell{}, K3:SortLocCell{}))) [functional{}()] // functional
@@ -3052,19 +3121,28 @@ module KT
   axiom{}\implies{SortLocCell{}} (\and{SortLocCell{}} (Lbl'-LT-'loc'-GT-'{}(X0:SortInt{}), Lbl'-LT-'loc'-GT-'{}(Y0:SortInt{})), Lbl'-LT-'loc'-GT-'{}(\and{SortInt{}} (X0:SortInt{}, Y0:SortInt{}))) [constructor{}()] // no confusion same constructor
   axiom{R} \exists{R} (Val:SortStoreCell{}, \equals{SortStoreCell{}, R} (Val:SortStoreCell{}, Lbl'-LT-'store'-GT-'{}(K0:SortMap{}))) [functional{}()] // functional
   axiom{}\implies{SortStoreCell{}} (\and{SortStoreCell{}} (Lbl'-LT-'store'-GT-'{}(X0:SortMap{}), Lbl'-LT-'store'-GT-'{}(Y0:SortMap{})), Lbl'-LT-'store'-GT-'{}(\and{SortMap{}} (X0:SortMap{}, Y0:SortMap{}))) [constructor{}()] // no confusion same constructor
+  axiom{R} \exists{R} (Val:SortVarType{}, \equals{SortVarType{}, R} (Val:SortVarType{}, LblBoolean'Unds'KT-SYNTAX'Unds'VarType{}())) [functional{}()] // functional
+  axiom{}\not{SortVarType{}} (\and{SortVarType{}} (LblBoolean'Unds'KT-SYNTAX'Unds'VarType{}(), LblInt'Unds'KT-SYNTAX'Unds'VarType{}())) [constructor{}()] // no confusion different constructors
+  axiom{}\not{SortVarType{}} (\and{SortVarType{}} (LblBoolean'Unds'KT-SYNTAX'Unds'VarType{}(), LblString'Unds'KT-SYNTAX'Unds'VarType{}())) [constructor{}()] // no confusion different constructors
   axiom{R} \exists{R} (Val:SortString{}, \equals{SortString{}, R} (Val:SortString{}, LblFloat2String'LParUndsRParUnds'STRING'Unds'String'Unds'Float{}(K0:SortFloat{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortString{}, \equals{SortString{}, R} (Val:SortString{}, LblId2String'LParUndsRParUnds'ID-SYNTAX'Unds'String'Unds'Id{}(K0:SortId{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortString{}, \equals{SortString{}, R} (Val:SortString{}, LblInt2String'LParUndsRParUnds'STRING'Unds'String'Unds'Int{}(K0:SortInt{}))) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortVarType{}, \equals{SortVarType{}, R} (Val:SortVarType{}, LblInt'Unds'KT-SYNTAX'Unds'VarType{}())) [functional{}()] // functional
+  axiom{}\not{SortVarType{}} (\and{SortVarType{}} (LblInt'Unds'KT-SYNTAX'Unds'VarType{}(), LblString'Unds'KT-SYNTAX'Unds'VarType{}())) [constructor{}()] // no confusion different constructors
   axiom{R} \exists{R} (Val:SortList{}, \equals{SortList{}, R} (Val:SortList{}, LblListItem{}(K0:SortKItem{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortMap{}, \equals{SortMap{}, R} (Val:SortMap{}, LblMap'Coln'update{}(K0:SortMap{}, K1:SortKItem{}, K2:SortKItem{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortSet{}, \equals{SortSet{}, R} (Val:SortSet{}, LblSet'Coln'difference{}(K0:SortSet{}, K1:SortSet{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, LblSet'Coln'in{}(K0:SortKItem{}, K1:SortSet{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortSet{}, \equals{SortSet{}, R} (Val:SortSet{}, LblSetItem{}(K0:SortKItem{}))) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortSkip{}, \equals{SortSkip{}, R} (Val:SortSkip{}, LblSkip'Unds'KT-SYNTAX'Unds'Skip{}())) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortId{}, \equals{SortId{}, R} (Val:SortId{}, LblString2Id'LParUndsRParUnds'ID-SYNTAX'Unds'Id'Unds'String{}(K0:SortString{}))) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortVarType{}, \equals{SortVarType{}, R} (Val:SortVarType{}, LblString'Unds'KT-SYNTAX'Unds'VarType{}())) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, Lbl'UndsAnd-'Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, Lbl'UndsStar'Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, Lbl'UndsPlus'Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortString{}, \equals{SortString{}, R} (Val:SortString{}, Lbl'UndsPlus'String'UndsUnds'STRING'Unds'String'Unds'String'Unds'String{}(K0:SortString{}, K1:SortString{}))) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortIds{}, \equals{SortIds{}, R} (Val:SortIds{}, Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(K0:SortId{}, K1:SortIds{}))) [functional{}()] // functional
+  axiom{}\implies{SortIds{}} (\and{SortIds{}} (Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(X0:SortId{}, X1:SortIds{}), Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(Y0:SortId{}, Y1:SortIds{})), Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(\and{SortId{}} (X0:SortId{}, Y0:SortId{}), \and{SortIds{}} (X1:SortIds{}, Y1:SortIds{}))) [constructor{}()] // no confusion same constructor
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, Lbl'Unds'-Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortMap{}, \equals{SortMap{}, R} (Val:SortMap{}, Lbl'Unds'-Map'UndsUnds'MAP'Unds'Map'Unds'Map'Unds'Map{}(K0:SortMap{}, K1:SortMap{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'Unds-LT-Eqls'Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
@@ -3081,6 +3159,15 @@ module KT
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'UndsEqlsEqls'Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'UndsEqlsEqls'K'Unds'{}(K0:SortK{}, K1:SortK{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'UndsEqlsEqls'String'UndsUnds'STRING'Unds'Bool'Unds'String'Unds'String{}(K0:SortString{}, K1:SortString{}))) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortAssigner{}, \equals{SortAssigner{}, R} (Val:SortAssigner{}, Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(K0:SortVarDeclaration{}, K1:SortAExp{}))) [functional{}()] // functional
+  axiom{}\implies{SortAssigner{}} (\and{SortAssigner{}} (Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(X0:SortVarDeclaration{}, X1:SortAExp{}), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(Y0:SortVarDeclaration{}, Y1:SortAExp{})), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(\and{SortVarDeclaration{}} (X0:SortVarDeclaration{}, Y0:SortVarDeclaration{}), \and{SortAExp{}} (X1:SortAExp{}, Y1:SortAExp{}))) [constructor{}()] // no confusion same constructor
+  axiom{}\not{SortAssigner{}} (\and{SortAssigner{}} (Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(X0:SortVarDeclaration{}, X1:SortAExp{}), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(Y0:SortVarDeclaration{}, Y1:SortBExp{}))) [constructor{}()] // no confusion different constructors
+  axiom{}\not{SortAssigner{}} (\and{SortAssigner{}} (Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(X0:SortVarDeclaration{}, X1:SortAExp{}), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(Y0:SortVarDeclaration{}, Y1:SortSExp{}))) [constructor{}()] // no confusion different constructors
+  axiom{R} \exists{R} (Val:SortAssigner{}, \equals{SortAssigner{}, R} (Val:SortAssigner{}, Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(K0:SortVarDeclaration{}, K1:SortBExp{}))) [functional{}()] // functional
+  axiom{}\implies{SortAssigner{}} (\and{SortAssigner{}} (Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(X0:SortVarDeclaration{}, X1:SortBExp{}), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(Y0:SortVarDeclaration{}, Y1:SortBExp{})), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(\and{SortVarDeclaration{}} (X0:SortVarDeclaration{}, Y0:SortVarDeclaration{}), \and{SortBExp{}} (X1:SortBExp{}, Y1:SortBExp{}))) [constructor{}()] // no confusion same constructor
+  axiom{}\not{SortAssigner{}} (\and{SortAssigner{}} (Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(X0:SortVarDeclaration{}, X1:SortBExp{}), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(Y0:SortVarDeclaration{}, Y1:SortSExp{}))) [constructor{}()] // no confusion different constructors
+  axiom{R} \exists{R} (Val:SortAssigner{}, \equals{SortAssigner{}, R} (Val:SortAssigner{}, Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(K0:SortVarDeclaration{}, K1:SortSExp{}))) [functional{}()] // functional
+  axiom{}\implies{SortAssigner{}} (\and{SortAssigner{}} (Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(X0:SortVarDeclaration{}, X1:SortSExp{}), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(Y0:SortVarDeclaration{}, Y1:SortSExp{})), Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(\and{SortVarDeclaration{}} (X0:SortVarDeclaration{}, Y0:SortVarDeclaration{}), \and{SortSExp{}} (X1:SortSExp{}, Y1:SortSExp{}))) [constructor{}()] // no confusion same constructor
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'Unds-GT-Eqls'Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'Unds-GT-Eqls'String'UndsUnds'STRING'Unds'Bool'Unds'String'Unds'String{}(K0:SortString{}, K1:SortString{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'Unds-GT-'Int'Unds'{}(K0:SortInt{}, K1:SortInt{}))) [functional{}()] // functional
@@ -3101,6 +3188,15 @@ module KT
   axiom{R} \exists{R} (Val:SortSet{}, \equals{SortSet{}, R} (Val:SortSet{}, Lbl'Unds'Set'Unds'{}(K0:SortSet{}, K1:SortSet{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortMap{}, \equals{SortMap{}, R} (Val:SortMap{}, Lbl'UndsLSqBUnds-LT-'-undef'RSqB'{}(K0:SortMap{}, K1:SortKItem{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortKItem{}, \equals{SortKItem{}, R} (Val:SortKItem{}, Lbl'UndsLSqBUndsRSqB'orDefault'UndsUnds'MAP'Unds'KItem'Unds'Map'Unds'KItem'Unds'KItem{}(K0:SortMap{}, K1:SortKItem{}, K2:SortKItem{}))) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortVarDeclaration{}, \equals{SortVarDeclaration{}, R} (Val:SortVarDeclaration{}, Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(K0:SortVarMod{}, K1:SortIds{}))) [functional{}()] // functional
+  axiom{}\implies{SortVarDeclaration{}} (\and{SortVarDeclaration{}} (Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}), Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Y0:SortVarMod{}, Y1:SortIds{})), Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(\and{SortVarMod{}} (X0:SortVarMod{}, Y0:SortVarMod{}), \and{SortIds{}} (X1:SortIds{}, Y1:SortIds{}))) [constructor{}()] // no confusion same constructor
+  axiom{}\not{SortVarDeclaration{}} (\and{SortVarDeclaration{}} (Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}), Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Y0:SortVarMod{}, Y1:SortIds{}))) [constructor{}()] // no confusion different constructors
+  axiom{}\not{SortVarDeclaration{}} (\and{SortVarDeclaration{}} (Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}), Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Y0:SortVarMod{}, Y1:SortIds{}))) [constructor{}()] // no confusion different constructors
+  axiom{R} \exists{R} (Val:SortVarDeclaration{}, \equals{SortVarDeclaration{}, R} (Val:SortVarDeclaration{}, Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(K0:SortVarMod{}, K1:SortIds{}))) [functional{}()] // functional
+  axiom{}\implies{SortVarDeclaration{}} (\and{SortVarDeclaration{}} (Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}), Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Y0:SortVarMod{}, Y1:SortIds{})), Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(\and{SortVarMod{}} (X0:SortVarMod{}, Y0:SortVarMod{}), \and{SortIds{}} (X1:SortIds{}, Y1:SortIds{}))) [constructor{}()] // no confusion same constructor
+  axiom{}\not{SortVarDeclaration{}} (\and{SortVarDeclaration{}} (Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}), Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Y0:SortVarMod{}, Y1:SortIds{}))) [constructor{}()] // no confusion different constructors
+  axiom{R} \exists{R} (Val:SortVarDeclaration{}, \equals{SortVarDeclaration{}, R} (Val:SortVarDeclaration{}, Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(K0:SortVarMod{}, K1:SortIds{}))) [functional{}()] // functional
+  axiom{}\implies{SortVarDeclaration{}} (\and{SortVarDeclaration{}} (Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}), Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Y0:SortVarMod{}, Y1:SortIds{})), Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(\and{SortVarMod{}} (X0:SortVarMod{}, Y0:SortVarMod{}), \and{SortIds{}} (X1:SortIds{}, Y1:SortIds{}))) [constructor{}()] // no confusion same constructor
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'Unds'andBool'Unds'{}(K0:SortBool{}, K1:SortBool{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'Unds'andThenBool'Unds'{}(K0:SortBool{}, K1:SortBool{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortBool{}, \equals{SortBool{}, R} (Val:SortBool{}, Lbl'Unds'impliesBool'Unds'{}(K0:SortBool{}, K1:SortBool{}))) [functional{}()] // functional
@@ -3116,7 +3212,8 @@ module KT
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, LblcountAllOccurrences'LParUndsCommUndsRParUnds'STRING'Unds'Int'Unds'String'Unds'String{}(K0:SortString{}, K1:SortString{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortId{}, \equals{SortId{}, R} (Val:SortId{}, LblfreshId'LParUndsRParUnds'ID-SYNTAX'Unds'Id'Unds'Int{}(K0:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, LblfreshInt'LParUndsRParUnds'INT'Unds'Int'Unds'Int{}(K0:SortInt{}))) [functional{}()] // functional
-  axiom{R} \exists{R} (Val:SortFun{}, \equals{SortFun{}, R} (Val:SortFun{}, Lblfunmain'LParRParLBraRBraUnds'KT-SYNTAX'Unds'Fun{}())) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortFun{}, \equals{SortFun{}, R} (Val:SortFun{}, Lblfunmain'LParRParLBraUndsRBraUnds'KT-SYNTAX'Unds'Fun'Unds'Block{}(K0:SortBlock{}))) [functional{}()] // functional
+  axiom{}\implies{SortFun{}} (\and{SortFun{}} (Lblfunmain'LParRParLBraUndsRBraUnds'KT-SYNTAX'Unds'Fun'Unds'Block{}(X0:SortBlock{}), Lblfunmain'LParRParLBraUndsRBraUnds'KT-SYNTAX'Unds'Fun'Unds'Block{}(Y0:SortBlock{})), Lblfunmain'LParRParLBraUndsRBraUnds'KT-SYNTAX'Unds'Fun'Unds'Block{}(\and{SortBlock{}} (X0:SortBlock{}, Y0:SortBlock{}))) [constructor{}()] // no confusion same constructor
   axiom{R} \exists{R} (Val:SortSet{}, \equals{SortSet{}, R} (Val:SortSet{}, LblintersectSet'LParUndsCommUndsRParUnds'SET'Unds'Set'Unds'Set'Unds'Set{}(K0:SortSet{}, K1:SortSet{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortSet{}, \equals{SortSet{}, R} (Val:SortSet{}, Lblkeys'LParUndsRParUnds'MAP'Unds'Set'Unds'Map{}(K0:SortMap{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, LbllengthString'LParUndsRParUnds'STRING'Unds'Int'Unds'String{}(K0:SortString{}))) [functional{}()] // functional
@@ -3137,8 +3234,13 @@ module KT
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, Lblsize'LParUndsRParUnds'SET'Unds'Int'Unds'Set{}(K0:SortSet{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortString{}, \equals{SortString{}, R} (Val:SortString{}, LblsubstrString'LParUndsCommUndsCommUndsRParUnds'STRING'Unds'String'Unds'String'Unds'Int'Unds'Int{}(K0:SortString{}, K1:SortInt{}, K2:SortInt{}))) [functional{}()] // functional
   axiom{R} \exists{R} (Val:SortMap{}, \equals{SortMap{}, R} (Val:SortMap{}, LblupdateMap'LParUndsCommUndsRParUnds'MAP'Unds'Map'Unds'Map'Unds'Map{}(K0:SortMap{}, K1:SortMap{}))) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortVarMod{}, \equals{SortVarMod{}, R} (Val:SortVarMod{}, Lblval'Unds'KT-SYNTAX'Unds'VarMod{}())) [functional{}()] // functional
+  axiom{}\not{SortVarMod{}} (\and{SortVarMod{}} (Lblval'Unds'KT-SYNTAX'Unds'VarMod{}(), Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}())) [constructor{}()] // no confusion different constructors
+  axiom{R} \exists{R} (Val:SortVarMod{}, \equals{SortVarMod{}, R} (Val:SortVarMod{}, Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}())) [functional{}()] // functional
+  axiom{R} \exists{R} (Val:SortBlock{}, \equals{SortBlock{}, R} (Val:SortBlock{}, Lbl'LBraUndsRBraUnds'KT-SYNTAX'Unds'Block'Unds'Stmt{}(K0:SortStmt{}))) [functional{}()] // functional
+  axiom{}\implies{SortBlock{}} (\and{SortBlock{}} (Lbl'LBraUndsRBraUnds'KT-SYNTAX'Unds'Block'Unds'Stmt{}(X0:SortStmt{}), Lbl'LBraUndsRBraUnds'KT-SYNTAX'Unds'Block'Unds'Stmt{}(Y0:SortStmt{})), Lbl'LBraUndsRBraUnds'KT-SYNTAX'Unds'Block'Unds'Stmt{}(\and{SortStmt{}} (X0:SortStmt{}, Y0:SortStmt{}))) [constructor{}()] // no confusion same constructor
   axiom{R} \exists{R} (Val:SortInt{}, \equals{SortInt{}, R} (Val:SortInt{}, Lbl'Tild'Int'Unds'{}(K0:SortInt{}))) [functional{}()] // functional
-  axiom{} \or{SortKItem{}} (\exists{SortKItem{}} (X0:SortInt{}, \exists{SortKItem{}} (X1:SortString{}, \exists{SortKItem{}} (X2:SortString{}, Lbl'Hash'systemResult{}(X0:SortInt{}, X1:SortString{}, X2:SortString{})))), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortList{}, inj{SortList{}, SortKItem{}} (Val:SortList{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortTCellOpt{}, inj{SortTCellOpt{}, SortKItem{}} (Val:SortTCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortTCellFragment{}, inj{SortTCellFragment{}, SortKItem{}} (Val:SortTCellFragment{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortString{}, inj{SortString{}, SortKItem{}} (Val:SortString{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOInt{}, inj{SortIOInt{}, SortKItem{}} (Val:SortIOInt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortTCell{}, inj{SortTCell{}, SortKItem{}} (Val:SortTCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedCounterCellOpt{}, inj{SortGeneratedCounterCellOpt{}, SortKItem{}} (Val:SortGeneratedCounterCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedCounterCell{}, inj{SortGeneratedCounterCell{}, SortKItem{}} (Val:SortGeneratedCounterCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortId{}, inj{SortId{}, SortKItem{}} (Val:SortId{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortStream{}, inj{SortStream{}, SortKItem{}} (Val:SortStream{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortCell{}, inj{SortCell{}, SortKItem{}} (Val:SortCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortBool{}, inj{SortBool{}, SortKItem{}} (Val:SortBool{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortKCell{}, inj{SortKCell{}, SortKItem{}} (Val:SortKCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortStoreCell{}, inj{SortStoreCell{}, SortKItem{}} (Val:SortStoreCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOFile{}, inj{SortIOFile{}, SortKItem{}} (Val:SortIOFile{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortStoreCellOpt{}, inj{SortStoreCellOpt{}, SortKItem{}} (Val:SortStoreCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortKResult{}, inj{SortKResult{}, SortKItem{}} (Val:SortKResult{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortMap{}, inj{SortMap{}, SortKItem{}} (Val:SortMap{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortEnvCell{}, inj{SortEnvCell{}, SortKItem{}} (Val:SortEnvCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortLocCell{}, inj{SortLocCell{}, SortKItem{}} (Val:SortLocCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortKCellOpt{}, inj{SortKCellOpt{}, SortKItem{}} (Val:SortKCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortInt{}, inj{SortInt{}, SortKItem{}} (Val:SortInt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortFloat{}, inj{SortFloat{}, SortKItem{}} (Val:SortFloat{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortFun{}, inj{SortFun{}, SortKItem{}} (Val:SortFun{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedTopCell{}, inj{SortGeneratedTopCell{}, SortKItem{}} (Val:SortGeneratedTopCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortEnvCellOpt{}, inj{SortEnvCellOpt{}, SortKItem{}} (Val:SortEnvCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortSet{}, inj{SortSet{}, SortKItem{}} (Val:SortSet{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOString{}, inj{SortIOString{}, SortKItem{}} (Val:SortIOString{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedTopCellFragment{}, inj{SortGeneratedTopCellFragment{}, SortKItem{}} (Val:SortGeneratedTopCellFragment{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOError{}, inj{SortIOError{}, SortKItem{}} (Val:SortIOError{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortLocCellOpt{}, inj{SortLocCellOpt{}, SortKItem{}} (Val:SortLocCellOpt{})), \bottom{SortKItem{}}())))))))))))))))))))))))))))))))) [constructor{}()] // no junk
+  axiom{} \or{SortKItem{}} (\exists{SortKItem{}} (X0:SortInt{}, \exists{SortKItem{}} (X1:SortString{}, \exists{SortKItem{}} (X2:SortString{}, Lbl'Hash'systemResult{}(X0:SortInt{}, X1:SortString{}, X2:SortString{})))), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortList{}, inj{SortList{}, SortKItem{}} (Val:SortList{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortTCellOpt{}, inj{SortTCellOpt{}, SortKItem{}} (Val:SortTCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortTCellFragment{}, inj{SortTCellFragment{}, SortKItem{}} (Val:SortTCellFragment{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortString{}, inj{SortString{}, SortKItem{}} (Val:SortString{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOInt{}, inj{SortIOInt{}, SortKItem{}} (Val:SortIOInt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortTCell{}, inj{SortTCell{}, SortKItem{}} (Val:SortTCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIds{}, inj{SortIds{}, SortKItem{}} (Val:SortIds{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortVarType{}, inj{SortVarType{}, SortKItem{}} (Val:SortVarType{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortBExp{}, inj{SortBExp{}, SortKItem{}} (Val:SortBExp{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedCounterCellOpt{}, inj{SortGeneratedCounterCellOpt{}, SortKItem{}} (Val:SortGeneratedCounterCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortSkip{}, inj{SortSkip{}, SortKItem{}} (Val:SortSkip{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedCounterCell{}, inj{SortGeneratedCounterCell{}, SortKItem{}} (Val:SortGeneratedCounterCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortId{}, inj{SortId{}, SortKItem{}} (Val:SortId{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortStream{}, inj{SortStream{}, SortKItem{}} (Val:SortStream{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortCell{}, inj{SortCell{}, SortKItem{}} (Val:SortCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortBool{}, inj{SortBool{}, SortKItem{}} (Val:SortBool{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortKCell{}, inj{SortKCell{}, SortKItem{}} (Val:SortKCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortStoreCell{}, inj{SortStoreCell{}, SortKItem{}} (Val:SortStoreCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOFile{}, inj{SortIOFile{}, SortKItem{}} (Val:SortIOFile{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortStoreCellOpt{}, inj{SortStoreCellOpt{}, SortKItem{}} (Val:SortStoreCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortKResult{}, inj{SortKResult{}, SortKItem{}} (Val:SortKResult{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortAssigner{}, inj{SortAssigner{}, SortKItem{}} (Val:SortAssigner{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortMap{}, inj{SortMap{}, SortKItem{}} (Val:SortMap{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortEnvCell{}, inj{SortEnvCell{}, SortKItem{}} (Val:SortEnvCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortLocCell{}, inj{SortLocCell{}, SortKItem{}} (Val:SortLocCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortKCellOpt{}, inj{SortKCellOpt{}, SortKItem{}} (Val:SortKCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortStmt{}, inj{SortStmt{}, SortKItem{}} (Val:SortStmt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortInt{}, inj{SortInt{}, SortKItem{}} (Val:SortInt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortFloat{}, inj{SortFloat{}, SortKItem{}} (Val:SortFloat{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortVarDeclaration{}, inj{SortVarDeclaration{}, SortKItem{}} (Val:SortVarDeclaration{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortFun{}, inj{SortFun{}, SortKItem{}} (Val:SortFun{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedTopCell{}, inj{SortGeneratedTopCell{}, SortKItem{}} (Val:SortGeneratedTopCell{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortEnvCellOpt{}, inj{SortEnvCellOpt{}, SortKItem{}} (Val:SortEnvCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortBlock{}, inj{SortBlock{}, SortKItem{}} (Val:SortBlock{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortSet{}, inj{SortSet{}, SortKItem{}} (Val:SortSet{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortVarMod{}, inj{SortVarMod{}, SortKItem{}} (Val:SortVarMod{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOString{}, inj{SortIOString{}, SortKItem{}} (Val:SortIOString{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortGeneratedTopCellFragment{}, inj{SortGeneratedTopCellFragment{}, SortKItem{}} (Val:SortGeneratedTopCellFragment{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortIOError{}, inj{SortIOError{}, SortKItem{}} (Val:SortIOError{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortLocCellOpt{}, inj{SortLocCellOpt{}, SortKItem{}} (Val:SortLocCellOpt{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortAExp{}, inj{SortAExp{}, SortKItem{}} (Val:SortAExp{})), \or{SortKItem{}} (\exists{SortKItem{}} (Val:SortSExp{}, inj{SortSExp{}, SortKItem{}} (Val:SortSExp{})), \bottom{SortKItem{}}()))))))))))))))))))))))))))))))))))))))))))) [constructor{}()] // no junk
   axiom{} \bottom{SortList{}}() [constructor{}()] // no junk
   axiom{} \or{SortTCellOpt{}} (LblnoTCell{}(), \or{SortTCellOpt{}} (\exists{SortTCellOpt{}} (Val:SortTCell{}, inj{SortTCell{}, SortTCellOpt{}} (Val:SortTCell{})), \bottom{SortTCellOpt{}}())) [constructor{}()] // no junk
   axiom{} \or{SortTCellFragment{}} (\exists{SortTCellFragment{}} (X0:SortKCellOpt{}, \exists{SortTCellFragment{}} (X1:SortEnvCellOpt{}, \exists{SortTCellFragment{}} (X2:SortStoreCellOpt{}, \exists{SortTCellFragment{}} (X3:SortLocCellOpt{}, Lbl'-LT-'T'-GT-'-fragment{}(X0:SortKCellOpt{}, X1:SortEnvCellOpt{}, X2:SortStoreCellOpt{}, X3:SortLocCellOpt{}))))), \bottom{SortTCellFragment{}}()) [constructor{}()] // no junk
@@ -3146,7 +3248,11 @@ module KT
   axiom{} \or{SortKConfigVar{}} (\top{SortKConfigVar{}}(), \bottom{SortKConfigVar{}}()) [constructor{}()] // no junk (TODO: fix bug with \dv)
   axiom{} \or{SortIOInt{}} (\exists{SortIOInt{}} (Val:SortInt{}, inj{SortInt{}, SortIOInt{}} (Val:SortInt{})), \or{SortIOInt{}} (\exists{SortIOInt{}} (Val:SortIOError{}, inj{SortIOError{}, SortIOInt{}} (Val:SortIOError{})), \bottom{SortIOInt{}}())) [constructor{}()] // no junk
   axiom{} \or{SortTCell{}} (\exists{SortTCell{}} (X0:SortKCell{}, \exists{SortTCell{}} (X1:SortEnvCell{}, \exists{SortTCell{}} (X2:SortStoreCell{}, \exists{SortTCell{}} (X3:SortLocCell{}, Lbl'-LT-'T'-GT-'{}(X0:SortKCell{}, X1:SortEnvCell{}, X2:SortStoreCell{}, X3:SortLocCell{}))))), \bottom{SortTCell{}}()) [constructor{}()] // no junk
+  axiom{} \or{SortIds{}} (Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}(), \or{SortIds{}} (\exists{SortIds{}} (X0:SortId{}, \exists{SortIds{}} (X1:SortIds{}, Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(X0:SortId{}, X1:SortIds{}))), \bottom{SortIds{}}())) [constructor{}()] // no junk
+  axiom{} \or{SortVarType{}} (LblBoolean'Unds'KT-SYNTAX'Unds'VarType{}(), \or{SortVarType{}} (LblInt'Unds'KT-SYNTAX'Unds'VarType{}(), \or{SortVarType{}} (LblString'Unds'KT-SYNTAX'Unds'VarType{}(), \bottom{SortVarType{}}()))) [constructor{}()] // no junk
+  axiom{} \or{SortBExp{}} (\exists{SortBExp{}} (Val:SortBool{}, inj{SortBool{}, SortBExp{}} (Val:SortBool{})), \bottom{SortBExp{}}()) [constructor{}()] // no junk
   axiom{} \or{SortGeneratedCounterCellOpt{}} (LblnoGeneratedCounterCell{}(), \or{SortGeneratedCounterCellOpt{}} (\exists{SortGeneratedCounterCellOpt{}} (Val:SortGeneratedCounterCell{}, inj{SortGeneratedCounterCell{}, SortGeneratedCounterCellOpt{}} (Val:SortGeneratedCounterCell{})), \bottom{SortGeneratedCounterCellOpt{}}())) [constructor{}()] // no junk
+  axiom{} \or{SortSkip{}} (LblSkip'Unds'KT-SYNTAX'Unds'Skip{}(), \bottom{SortSkip{}}()) [constructor{}()] // no junk
   axiom{} \or{SortGeneratedCounterCell{}} (\exists{SortGeneratedCounterCell{}} (X0:SortInt{}, Lbl'-LT-'generatedCounter'-GT-'{}(X0:SortInt{})), \bottom{SortGeneratedCounterCell{}}()) [constructor{}()] // no junk
   axiom{} \or{SortId{}} (\top{SortId{}}(), \bottom{SortId{}}()) [constructor{}()] // no junk (TODO: fix bug with \dv)
   axiom{} \or{SortStream{}} (\exists{SortStream{}} (X0:SortK{}, Lbl'Hash'buffer'LParUndsRParUnds'K-IO'Unds'Stream'Unds'K{}(X0:SortK{})), \bottom{SortStream{}}()) [constructor{}()] // no junk
@@ -3158,20 +3264,27 @@ module KT
   axiom{} \or{SortIOFile{}} (\exists{SortIOFile{}} (X0:SortString{}, \exists{SortIOFile{}} (X1:SortInt{}, Lbl'Hash'tempFile{}(X0:SortString{}, X1:SortInt{}))), \or{SortIOFile{}} (\exists{SortIOFile{}} (Val:SortIOError{}, inj{SortIOError{}, SortIOFile{}} (Val:SortIOError{})), \bottom{SortIOFile{}}())) [constructor{}()] // no junk
   axiom{} \or{SortStoreCellOpt{}} (LblnoStoreCell{}(), \or{SortStoreCellOpt{}} (\exists{SortStoreCellOpt{}} (Val:SortStoreCell{}, inj{SortStoreCell{}, SortStoreCellOpt{}} (Val:SortStoreCell{})), \bottom{SortStoreCellOpt{}}())) [constructor{}()] // no junk
   axiom{} \or{SortKResult{}} (\exists{SortKResult{}} (Val:SortBool{}, inj{SortBool{}, SortKResult{}} (Val:SortBool{})), \or{SortKResult{}} (\exists{SortKResult{}} (Val:SortInt{}, inj{SortInt{}, SortKResult{}} (Val:SortInt{})), \bottom{SortKResult{}}())) [constructor{}()] // no junk
+  axiom{} \or{SortAssigner{}} (\exists{SortAssigner{}} (X0:SortVarDeclaration{}, \exists{SortAssigner{}} (X1:SortAExp{}, Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(X0:SortVarDeclaration{}, X1:SortAExp{}))), \or{SortAssigner{}} (\exists{SortAssigner{}} (X0:SortVarDeclaration{}, \exists{SortAssigner{}} (X1:SortBExp{}, Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(X0:SortVarDeclaration{}, X1:SortBExp{}))), \or{SortAssigner{}} (\exists{SortAssigner{}} (X0:SortVarDeclaration{}, \exists{SortAssigner{}} (X1:SortSExp{}, Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(X0:SortVarDeclaration{}, X1:SortSExp{}))), \bottom{SortAssigner{}}()))) [constructor{}()] // no junk
   axiom{} \bottom{SortMap{}}() [constructor{}()] // no junk
   axiom{} \or{SortEnvCell{}} (\exists{SortEnvCell{}} (X0:SortMap{}, Lbl'-LT-'env'-GT-'{}(X0:SortMap{})), \bottom{SortEnvCell{}}()) [constructor{}()] // no junk
   axiom{} \or{SortLocCell{}} (\exists{SortLocCell{}} (X0:SortInt{}, Lbl'-LT-'loc'-GT-'{}(X0:SortInt{})), \bottom{SortLocCell{}}()) [constructor{}()] // no junk
   axiom{} \or{SortKCellOpt{}} (LblnoKCell{}(), \or{SortKCellOpt{}} (\exists{SortKCellOpt{}} (Val:SortKCell{}, inj{SortKCell{}, SortKCellOpt{}} (Val:SortKCell{})), \bottom{SortKCellOpt{}}())) [constructor{}()] // no junk
+  axiom{} \or{SortStmt{}} (\exists{SortStmt{}} (Val:SortSkip{}, inj{SortSkip{}, SortStmt{}} (Val:SortSkip{})), \or{SortStmt{}} (\exists{SortStmt{}} (Val:SortAssigner{}, inj{SortAssigner{}, SortStmt{}} (Val:SortAssigner{})), \or{SortStmt{}} (\exists{SortStmt{}} (Val:SortInt{}, inj{SortInt{}, SortStmt{}} (Val:SortInt{})), \or{SortStmt{}} (\exists{SortStmt{}} (Val:SortVarDeclaration{}, inj{SortVarDeclaration{}, SortStmt{}} (Val:SortVarDeclaration{})), \or{SortStmt{}} (\exists{SortStmt{}} (Val:SortAExp{}, inj{SortAExp{}, SortStmt{}} (Val:SortAExp{})), \bottom{SortStmt{}}()))))) [constructor{}()] // no junk
   axiom{} \or{SortInt{}} (\top{SortInt{}}(), \bottom{SortInt{}}()) [constructor{}()] // no junk (TODO: fix bug with \dv)
   axiom{} \or{SortFloat{}} (\top{SortFloat{}}(), \bottom{SortFloat{}}()) [constructor{}()] // no junk (TODO: fix bug with \dv)
-  axiom{} \or{SortFun{}} (Lblfunmain'LParRParLBraRBraUnds'KT-SYNTAX'Unds'Fun{}(), \bottom{SortFun{}}()) [constructor{}()] // no junk
+  axiom{} \or{SortVarDeclaration{}} (\exists{SortVarDeclaration{}} (X0:SortVarMod{}, \exists{SortVarDeclaration{}} (X1:SortIds{}, Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}))), \or{SortVarDeclaration{}} (\exists{SortVarDeclaration{}} (X0:SortVarMod{}, \exists{SortVarDeclaration{}} (X1:SortIds{}, Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}))), \or{SortVarDeclaration{}} (\exists{SortVarDeclaration{}} (X0:SortVarMod{}, \exists{SortVarDeclaration{}} (X1:SortIds{}, Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(X0:SortVarMod{}, X1:SortIds{}))), \bottom{SortVarDeclaration{}}()))) [constructor{}()] // no junk
+  axiom{} \or{SortFun{}} (\exists{SortFun{}} (X0:SortBlock{}, Lblfunmain'LParRParLBraUndsRBraUnds'KT-SYNTAX'Unds'Fun'Unds'Block{}(X0:SortBlock{})), \bottom{SortFun{}}()) [constructor{}()] // no junk
   axiom{} \or{SortGeneratedTopCell{}} (\exists{SortGeneratedTopCell{}} (X0:SortTCell{}, \exists{SortGeneratedTopCell{}} (X1:SortGeneratedCounterCell{}, Lbl'-LT-'generatedTop'-GT-'{}(X0:SortTCell{}, X1:SortGeneratedCounterCell{}))), \bottom{SortGeneratedTopCell{}}()) [constructor{}()] // no junk
   axiom{} \or{SortEnvCellOpt{}} (LblnoEnvCell{}(), \or{SortEnvCellOpt{}} (\exists{SortEnvCellOpt{}} (Val:SortEnvCell{}, inj{SortEnvCell{}, SortEnvCellOpt{}} (Val:SortEnvCell{})), \bottom{SortEnvCellOpt{}}())) [constructor{}()] // no junk
+  axiom{} \or{SortBlock{}} (\exists{SortBlock{}} (X0:SortStmt{}, Lbl'LBraUndsRBraUnds'KT-SYNTAX'Unds'Block'Unds'Stmt{}(X0:SortStmt{})), \or{SortBlock{}} (\exists{SortBlock{}} (Val:SortSkip{}, inj{SortSkip{}, SortBlock{}} (Val:SortSkip{})), \or{SortBlock{}} (\exists{SortBlock{}} (Val:SortAssigner{}, inj{SortAssigner{}, SortBlock{}} (Val:SortAssigner{})), \or{SortBlock{}} (\exists{SortBlock{}} (Val:SortStmt{}, inj{SortStmt{}, SortBlock{}} (Val:SortStmt{})), \or{SortBlock{}} (\exists{SortBlock{}} (Val:SortInt{}, inj{SortInt{}, SortBlock{}} (Val:SortInt{})), \or{SortBlock{}} (\exists{SortBlock{}} (Val:SortVarDeclaration{}, inj{SortVarDeclaration{}, SortBlock{}} (Val:SortVarDeclaration{})), \or{SortBlock{}} (\exists{SortBlock{}} (Val:SortAExp{}, inj{SortAExp{}, SortBlock{}} (Val:SortAExp{})), \bottom{SortBlock{}}()))))))) [constructor{}()] // no junk
   axiom{} \bottom{SortSet{}}() [constructor{}()] // no junk
+  axiom{} \or{SortVarMod{}} (Lblval'Unds'KT-SYNTAX'Unds'VarMod{}(), \or{SortVarMod{}} (Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(), \bottom{SortVarMod{}}())) [constructor{}()] // no junk
   axiom{} \or{SortIOString{}} (\exists{SortIOString{}} (Val:SortString{}, inj{SortString{}, SortIOString{}} (Val:SortString{})), \or{SortIOString{}} (\exists{SortIOString{}} (Val:SortIOError{}, inj{SortIOError{}, SortIOString{}} (Val:SortIOError{})), \bottom{SortIOString{}}())) [constructor{}()] // no junk
   axiom{} \or{SortGeneratedTopCellFragment{}} (\exists{SortGeneratedTopCellFragment{}} (X0:SortTCellOpt{}, \exists{SortGeneratedTopCellFragment{}} (X1:SortGeneratedCounterCellOpt{}, Lbl'-LT-'generatedTop'-GT-'-fragment{}(X0:SortTCellOpt{}, X1:SortGeneratedCounterCellOpt{}))), \bottom{SortGeneratedTopCellFragment{}}()) [constructor{}()] // no junk
   axiom{} \or{SortIOError{}} (Lbl'Hash'E2BIG{}(), \or{SortIOError{}} (Lbl'Hash'EACCES{}(), \or{SortIOError{}} (Lbl'Hash'EADDRINUSE{}(), \or{SortIOError{}} (Lbl'Hash'EADDRNOTAVAIL{}(), \or{SortIOError{}} (Lbl'Hash'EAFNOSUPPORT{}(), \or{SortIOError{}} (Lbl'Hash'EAGAIN{}(), \or{SortIOError{}} (Lbl'Hash'EALREADY{}(), \or{SortIOError{}} (Lbl'Hash'EBADF{}(), \or{SortIOError{}} (Lbl'Hash'EBUSY{}(), \or{SortIOError{}} (Lbl'Hash'ECHILD{}(), \or{SortIOError{}} (Lbl'Hash'ECONNABORTED{}(), \or{SortIOError{}} (Lbl'Hash'ECONNREFUSED{}(), \or{SortIOError{}} (Lbl'Hash'ECONNRESET{}(), \or{SortIOError{}} (Lbl'Hash'EDEADLK{}(), \or{SortIOError{}} (Lbl'Hash'EDESTADDRREQ{}(), \or{SortIOError{}} (Lbl'Hash'EDOM{}(), \or{SortIOError{}} (Lbl'Hash'EEXIST{}(), \or{SortIOError{}} (Lbl'Hash'EFAULT{}(), \or{SortIOError{}} (Lbl'Hash'EFBIG{}(), \or{SortIOError{}} (Lbl'Hash'EHOSTDOWN{}(), \or{SortIOError{}} (Lbl'Hash'EHOSTUNREACH{}(), \or{SortIOError{}} (Lbl'Hash'EINPROGRESS{}(), \or{SortIOError{}} (Lbl'Hash'EINTR{}(), \or{SortIOError{}} (Lbl'Hash'EINVAL{}(), \or{SortIOError{}} (Lbl'Hash'EIO{}(), \or{SortIOError{}} (Lbl'Hash'EISCONN{}(), \or{SortIOError{}} (Lbl'Hash'EISDIR{}(), \or{SortIOError{}} (Lbl'Hash'ELOOP{}(), \or{SortIOError{}} (Lbl'Hash'EMFILE{}(), \or{SortIOError{}} (Lbl'Hash'EMLINK{}(), \or{SortIOError{}} (Lbl'Hash'EMSGSIZE{}(), \or{SortIOError{}} (Lbl'Hash'ENAMETOOLONG{}(), \or{SortIOError{}} (Lbl'Hash'ENETDOWN{}(), \or{SortIOError{}} (Lbl'Hash'ENETRESET{}(), \or{SortIOError{}} (Lbl'Hash'ENETUNREACH{}(), \or{SortIOError{}} (Lbl'Hash'ENFILE{}(), \or{SortIOError{}} (Lbl'Hash'ENOBUFS{}(), \or{SortIOError{}} (Lbl'Hash'ENODEV{}(), \or{SortIOError{}} (Lbl'Hash'ENOENT{}(), \or{SortIOError{}} (Lbl'Hash'ENOEXEC{}(), \or{SortIOError{}} (Lbl'Hash'ENOLCK{}(), \or{SortIOError{}} (Lbl'Hash'ENOMEM{}(), \or{SortIOError{}} (Lbl'Hash'ENOPROTOOPT{}(), \or{SortIOError{}} (Lbl'Hash'ENOSPC{}(), \or{SortIOError{}} (Lbl'Hash'ENOSYS{}(), \or{SortIOError{}} (Lbl'Hash'ENOTCONN{}(), \or{SortIOError{}} (Lbl'Hash'ENOTDIR{}(), \or{SortIOError{}} (Lbl'Hash'ENOTEMPTY{}(), \or{SortIOError{}} (Lbl'Hash'ENOTSOCK{}(), \or{SortIOError{}} (Lbl'Hash'ENOTTY{}(), \or{SortIOError{}} (Lbl'Hash'ENXIO{}(), \or{SortIOError{}} (Lbl'Hash'EOF{}(), \or{SortIOError{}} (Lbl'Hash'EOPNOTSUPP{}(), \or{SortIOError{}} (Lbl'Hash'EOVERFLOW{}(), \or{SortIOError{}} (Lbl'Hash'EPERM{}(), \or{SortIOError{}} (Lbl'Hash'EPFNOSUPPORT{}(), \or{SortIOError{}} (Lbl'Hash'EPIPE{}(), \or{SortIOError{}} (Lbl'Hash'EPROTONOSUPPORT{}(), \or{SortIOError{}} (Lbl'Hash'EPROTOTYPE{}(), \or{SortIOError{}} (Lbl'Hash'ERANGE{}(), \or{SortIOError{}} (Lbl'Hash'EROFS{}(), \or{SortIOError{}} (Lbl'Hash'ESHUTDOWN{}(), \or{SortIOError{}} (Lbl'Hash'ESOCKTNOSUPPORT{}(), \or{SortIOError{}} (Lbl'Hash'ESPIPE{}(), \or{SortIOError{}} (Lbl'Hash'ESRCH{}(), \or{SortIOError{}} (Lbl'Hash'ETIMEDOUT{}(), \or{SortIOError{}} (Lbl'Hash'ETOOMANYREFS{}(), \or{SortIOError{}} (Lbl'Hash'EWOULDBLOCK{}(), \or{SortIOError{}} (Lbl'Hash'EXDEV{}(), \or{SortIOError{}} (\exists{SortIOError{}} (X0:SortString{}, Lbl'Hash'noParse{}(X0:SortString{})), \or{SortIOError{}} (\exists{SortIOError{}} (X0:SortInt{}, Lbl'Hash'unknownIOError{}(X0:SortInt{})), \bottom{SortIOError{}}()))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) [constructor{}()] // no junk
   axiom{} \or{SortLocCellOpt{}} (LblnoLocCell{}(), \or{SortLocCellOpt{}} (\exists{SortLocCellOpt{}} (Val:SortLocCell{}, inj{SortLocCell{}, SortLocCellOpt{}} (Val:SortLocCell{})), \bottom{SortLocCellOpt{}}())) [constructor{}()] // no junk
+  axiom{} \or{SortAExp{}} (\exists{SortAExp{}} (Val:SortInt{}, inj{SortInt{}, SortAExp{}} (Val:SortInt{})), \bottom{SortAExp{}}()) [constructor{}()] // no junk
+  axiom{} \or{SortSExp{}} (\exists{SortSExp{}} (Val:SortString{}, inj{SortString{}, SortSExp{}} (Val:SortString{})), \bottom{SortSExp{}}()) [constructor{}()] // no junk
 
 // rules
 // rule `#if_#then_#else_#fi_K-EQUAL_Sort_Bool_Sort_Sort`{K}(C,B1,_0)=>B1 requires C ensures #token("true","Bool") [UNIQUE_ID(b40db17b830ee9bc7ad48d91713b0acfd528a4caa7b9f56b2654645f58b2f21f) contentStartColumn(8) contentStartLine(862) org.kframework.attributes.Location(Location(862,8,862,59)) org.kframework.attributes.Source(Source(/usr/local/k/include/builtin/domains.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody "requires" K [klabel(#ruleRequires) symbol()])]
@@ -3237,6 +3350,222 @@ module KT
         \dv{SortInt{}}("1")),
       \top{R}()))
   [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/usr/local/k/include/builtin/domains.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("1009"), contentStartColumn{}("8"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(1009,8,1009,20)"), UNIQUE'Unds'ID{}("d1cffe88ed4a0ac4f38b38f0ee6d54743fa4052ada718e9cea5f7a0ccb082d65")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),_0,_1,_2),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(DotVar2),_0,_1,_2),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(7cc01e097372e726e1b9130596f445ac64cef89564cb6d04f12172b751d2229c) contentStartColumn(10) contentStartLine(42) org.kframework.attributes.Location(Location(42,10,42,19)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule6LHS{}(SortGeneratedCounterCell{},SortK{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule6LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule6LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(VarDotVar2:SortK{}),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("42"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(42,10,42,19)"), UNIQUE'Unds'ID{}("7cc01e097372e726e1b9130596f445ac64cef89564cb6d04f12172b751d2229c")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList) #as _6,`_,__KT-SYNTAX_Ids_Id_Ids`(I,Xs)),inj{Int,AExp}(V) #as _8))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(_6,Xs),_8))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{Int,KItem}(V)))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(73de1757b4f042d77b9ef0817be3ff851c54e9c0859f409cdf5b3d2c7371888e) contentStartColumn(10) contentStartLine(94) org.kframework.attributes.Location(Location(94,10,97,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule7LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{},SortInt{},SortIds{},SortVarMod{},SortAExp{}) : SortGeneratedTopCell{}
+  where rule7LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortInt{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortAExp{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(\and{SortVarMod{}}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Var'Unds'6:SortVarMod{}),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},VarXs:SortIds{})),\and{SortAExp{}}(inj{SortInt{}, SortAExp{}}(VarV:SortInt{}),Var'Unds'8:SortAExp{}))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule7LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortInt{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortAExp{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Var'Unds'6:SortVarMod{},VarXs:SortIds{}),Var'Unds'8:SortAExp{})),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortInt{}, SortKItem{}}(VarV:SortInt{})))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("94"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(94,10,97,39)"), UNIQUE'Unds'ID{}("73de1757b4f042d77b9ef0817be3ff851c54e9c0859f409cdf5b3d2c7371888e")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)),inj{Int,AExp}(_0)))~>DotVar2),_1,_2,_3),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),_1,_2,_3),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(37af835b2abd3317e3946da870306744b28576083aaa4a1996e9b47825633d6c) contentStartColumn(10) contentStartLine(49) org.kframework.attributes.Location(Location(49,10,49,38)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule8LHS{}(SortGeneratedCounterCell{},SortK{},SortInt{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule8LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortInt{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}()),inj{SortInt{}, SortAExp{}}(Var'Unds'0:SortInt{}))),VarDotVar2:SortK{})),Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule8LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortInt{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("49"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(49,10,49,38)"), UNIQUE'Unds'ID{}("37af835b2abd3317e3946da870306744b28576083aaa4a1996e9b47825633d6c")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_AExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(I,`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))),inj{Int,AExp}(V)))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{Int,KItem}(V)))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(c1fd8bde63a3c1c567645119f315e0314df4f492f1ec1ca230252fa25851db8e) contentStartColumn(10) contentStartLine(79) org.kframework.attributes.Location(Location(79,10,82,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule9LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{},SortInt{}) : SortGeneratedTopCell{}
+  where rule9LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortInt{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'AExp{}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}())),inj{SortInt{}, SortAExp{}}(VarV:SortInt{}))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule9LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortInt{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortInt{}, SortKItem{}}(VarV:SortInt{})))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("79"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(79,10,82,39)"), UNIQUE'Unds'ID{}("c1fd8bde63a3c1c567645119f315e0314df4f492f1ec1ca230252fa25851db8e")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList) #as _6,`_,__KT-SYNTAX_Ids_Id_Ids`(I,Xs)),inj{Bool,BExp}(V) #as _8))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(_6,Xs),_8))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{Bool,KItem}(V)))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(42b716fe7c4f0b4ca8189379c60145af52dea0b74da9eeb3bc110700e8913e89) contentStartColumn(10) contentStartLine(99) org.kframework.attributes.Location(Location(99,10,102,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule10LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{},SortBool{},SortIds{},SortVarMod{},SortBExp{}) : SortGeneratedTopCell{}
+  where rule10LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortBool{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortBExp{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(\and{SortVarMod{}}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Var'Unds'6:SortVarMod{}),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},VarXs:SortIds{})),\and{SortBExp{}}(inj{SortBool{}, SortBExp{}}(VarV:SortBool{}),Var'Unds'8:SortBExp{}))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule10LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortBool{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortBExp{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Var'Unds'6:SortVarMod{},VarXs:SortIds{}),Var'Unds'8:SortBExp{})),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortBool{}, SortKItem{}}(VarV:SortBool{})))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("99"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(99,10,102,39)"), UNIQUE'Unds'ID{}("42b716fe7c4f0b4ca8189379c60145af52dea0b74da9eeb3bc110700e8913e89")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)),inj{Bool,BExp}(_0)))~>DotVar2),_1,_2,_3),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),_1,_2,_3),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(b601d0ad83ac2b1519b2ac1c5283972386c6da0af6591a944b2785ffea6638e2) contentStartColumn(10) contentStartLine(50) org.kframework.attributes.Location(Location(50,10,50,43)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule11LHS{}(SortGeneratedCounterCell{},SortK{},SortBool{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule11LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortBool{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}()),inj{SortBool{}, SortBExp{}}(Var'Unds'0:SortBool{}))),VarDotVar2:SortK{})),Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule11LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortBool{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("50"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(50,10,50,43)"), UNIQUE'Unds'ID{}("b601d0ad83ac2b1519b2ac1c5283972386c6da0af6591a944b2785ffea6638e2")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_BExp`(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(I,`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))),inj{Bool,BExp}(V)))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{Bool,KItem}(V)))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(4f771c469e875dabb4fbfec319c49eff69cde7ae18572044410fd42a1f9146cb) contentStartColumn(10) contentStartLine(84) org.kframework.attributes.Location(Location(84,10,87,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule12LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{},SortBool{}) : SortGeneratedTopCell{}
+  where rule12LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortBool{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'BExp{}(Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}())),inj{SortBool{}, SortBExp{}}(VarV:SortBool{}))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule12LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortBool{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortBool{}, SortKItem{}}(VarV:SortBool{})))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("84"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(84,10,87,39)"), UNIQUE'Unds'ID{}("4f771c469e875dabb4fbfec319c49eff69cde7ae18572044410fd42a1f9146cb")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList) #as _6,`_,__KT-SYNTAX_Ids_Id_Ids`(I,Xs)),inj{String,SExp}(V) #as _8))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(_6,Xs),_8))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{String,KItem}(V)))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(44fb4aa8ebb0de012f95595030a367b6d4da588e93310beab3d834fb37bde5f8) contentStartColumn(10) contentStartLine(104) org.kframework.attributes.Location(Location(104,10,107,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule13LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{},SortString{},SortIds{},SortVarMod{},SortSExp{}) : SortGeneratedTopCell{}
+  where rule13LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortString{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortSExp{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(\and{SortVarMod{}}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Var'Unds'6:SortVarMod{}),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},VarXs:SortIds{})),\and{SortSExp{}}(inj{SortString{}, SortSExp{}}(VarV:SortString{}),Var'Unds'8:SortSExp{}))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule13LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortString{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortSExp{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Var'Unds'6:SortVarMod{},VarXs:SortIds{}),Var'Unds'8:SortSExp{})),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortString{}, SortKItem{}}(VarV:SortString{})))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("104"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(104,10,107,39)"), UNIQUE'Unds'ID{}("44fb4aa8ebb0de012f95595030a367b6d4da588e93310beab3d834fb37bde5f8")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)),inj{String,SExp}(_0)))~>DotVar2),_1,_2,_3),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),_1,_2,_3),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(f368179cec4435f589c9760b7ff6b56b4c67eda676ef720f6659b543508f3f96) contentStartColumn(10) contentStartLine(51) org.kframework.attributes.Location(Location(51,10,51,44)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule14LHS{}(SortGeneratedCounterCell{},SortK{},SortString{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule14LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortString{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}()),inj{SortString{}, SortSExp{}}(Var'Unds'0:SortString{}))),VarDotVar2:SortK{})),Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule14LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortString{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("51"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(51,10,51,44)"), UNIQUE'Unds'ID{}("f368179cec4435f589c9760b7ff6b56b4c67eda676ef720f6659b543508f3f96")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Assigner,KItem}(`_=__KT-SYNTAX_Assigner_VarDeclaration_SExp`(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(I,`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))),inj{String,SExp}(V)))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{String,KItem}(V)))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(893fd21ffd9c27067a342dbbbfce158235ae1cec642d26e64eba087bdac38dd7) contentStartColumn(10) contentStartLine(89) org.kframework.attributes.Location(Location(89,10,92,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule15LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{},SortString{}) : SortGeneratedTopCell{}
+  where rule15LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortString{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(Lbl'UndsEqlsUndsUnds'KT-SYNTAX'Unds'Assigner'Unds'VarDeclaration'Unds'SExp{}(Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}())),inj{SortString{}, SortSExp{}}(VarV:SortString{}))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule15LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortString{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortString{}, SortKItem{}}(VarV:SortString{})))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("89"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(89,10,92,39)"), UNIQUE'Unds'ID{}("893fd21ffd9c27067a342dbbbfce158235ae1cec642d26e64eba087bdac38dd7")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)))~>DotVar2),_0,_1,_2),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),_0,_1,_2),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(ccc51f23e280e1d5822aa6a3721ee27b2039d989ff03ec1b32bb24f7e2fb2539) contentStartColumn(10) contentStartLine(47) org.kframework.attributes.Location(Location(47,10,47,34)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule16LHS{}(SortGeneratedCounterCell{},SortK{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule16LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}())),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule16LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("47"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(47,10,47,34)"), UNIQUE'Unds'ID{}("ccc51f23e280e1d5822aa6a3721ee27b2039d989ff03ec1b32bb24f7e2fb2539")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__Boolean_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(I,`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{Bool,KItem}(#token("false","Bool"))))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(139727da1e44ed2dc62b0fc2ab910f76b05e32eea23230589e8b3315b1592026) contentStartColumn(10) contentStartLine(64) org.kframework.attributes.Location(Location(64,10,67,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule17LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{}) : SortGeneratedTopCell{}
+  where rule17LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'Boolean'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}()))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule17LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortBool{}, SortKItem{}}(\dv{SortBool{}}("false"))))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("64"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(64,10,67,39)"), UNIQUE'Unds'ID{}("139727da1e44ed2dc62b0fc2ab910f76b05e32eea23230589e8b3315b1592026")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList) #as _5,`_,__KT-SYNTAX_Ids_Id_Ids`(I,Xs)))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(_5,Xs))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{Int,KItem}(#token("0","Int"))))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(20c1cfb3a7f103dff24c910e1cf2fb0c721fbb0027c873767c1463ba8ae70feb) contentStartColumn(10) contentStartLine(74) org.kframework.attributes.Location(Location(74,10,77,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule18LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{},SortIds{},SortVarMod{}) : SortGeneratedTopCell{}
+  where rule18LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarXs:SortIds{},Var'Unds'5:SortVarMod{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(\and{SortVarMod{}}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Var'Unds'5:SortVarMod{}),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},VarXs:SortIds{}))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule18LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarXs:SortIds{},Var'Unds'5:SortVarMod{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Var'Unds'5:SortVarMod{},VarXs:SortIds{})),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortInt{}, SortKItem{}}(\dv{SortInt{}}("0"))))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("74"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(74,10,77,39)"), UNIQUE'Unds'ID{}("20c1cfb3a7f103dff24c910e1cf2fb0c721fbb0027c873767c1463ba8ae70feb")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)))~>DotVar2),_0,_1,_2),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),_0,_1,_2),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(a2affab3c462d7fed9ffd09811231d796d3c7c82262345482794ec576269ed40) contentStartColumn(10) contentStartLine(46) org.kframework.attributes.Location(Location(46,10,46,30)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule19LHS{}(SortGeneratedCounterCell{},SortK{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule19LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}())),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule19LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("46"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(46,10,46,30)"), UNIQUE'Unds'ID{}("a2affab3c462d7fed9ffd09811231d796d3c7c82262345482794ec576269ed40")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__Int_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(I,`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{Int,KItem}(#token("0","Int"))))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(13262e3f9d72573536d81d3f896aa7c953ecd6dfaf9b3840315a217124031038) contentStartColumn(10) contentStartLine(59) org.kframework.attributes.Location(Location(59,10,62,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule20LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{}) : SortGeneratedTopCell{}
+  where rule20LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'Int'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}()))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule20LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortInt{}, SortKItem{}}(\dv{SortInt{}}("0"))))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("59"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(59,10,62,39)"), UNIQUE'Unds'ID{}("13262e3f9d72573536d81d3f896aa7c953ecd6dfaf9b3840315a217124031038")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList)))~>DotVar2),_0,_1,_2),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),_0,_1,_2),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(f775f0f1fb4bef6d24a575d27aa7366adce4fa4da13ffc83d1b6ece520ca51ab) contentStartColumn(10) contentStartLine(48) org.kframework.attributes.Location(Location(48,10,48,33)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule21LHS{}(SortGeneratedCounterCell{},SortK{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule21LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}())),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule21LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("48"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(48,10,48,33)"), UNIQUE'Unds'ID{}("f775f0f1fb4bef6d24a575d27aa7366adce4fa4da13ffc83d1b6ece520ca51ab")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{VarDeclaration,KItem}(`__String_KT-SYNTAX_VarDeclaration_VarMod_Ids`(`var_KT-SYNTAX_VarMod`(.KList),`_,__KT-SYNTAX_Ids_Id_Ids`(I,`.List{"_,__KT-SYNTAX_Ids_Id_Ids"}_Ids`(.KList))))~>DotVar2),`<env>`(MEnv),`<store>`(MStore),`<loc>`(L)),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Skip,KItem}(`Skip_KT-SYNTAX_Skip`(.KList))~>DotVar2),`<env>`(`_Map_`(MEnv,`_|->_`(inj{Id,KItem}(I),inj{Int,KItem}(L)))),`<store>`(`_Map_`(MStore,`_|->_`(inj{Int,KItem}(L),inj{String,KItem}(#token("\" \"","String"))))),`<loc>`(`_+Int_`(L,#token("1","Int")))),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(27a2e53429c69e5cbdf5cd6c970b198ae261fb0243398050a46668542e4323d2) contentStartColumn(10) contentStartLine(69) org.kframework.attributes.Location(Location(69,10,72,39)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
+  alias rule22LHS{}(SortGeneratedCounterCell{},SortK{},SortId{},SortInt{},SortMap{},SortMap{}) : SortGeneratedTopCell{}
+  where rule22LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Lbl'UndsUnds'String'Unds'KT-SYNTAX'Unds'VarDeclaration'Unds'VarMod'Unds'Ids{}(Lblvar'Unds'KT-SYNTAX'Unds'VarMod{}(),Lbl'UndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids{}(VarI:SortId{},Lbl'Stop'List'LBraQuotUndsCommUndsUnds'KT-SYNTAX'Unds'Ids'Unds'Id'Unds'Ids'QuotRBraUnds'Ids{}()))),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(VarMEnv:SortMap{}),Lbl'-LT-'store'-GT-'{}(VarMStore:SortMap{}),Lbl'-LT-'loc'-GT-'{}(VarL:SortInt{})),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule22LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortSkip{}, SortKItem{}}(LblSkip'Unds'KT-SYNTAX'Unds'Skip{}()),VarDotVar2:SortK{})),Lbl'-LT-'env'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMEnv:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortId{}, SortKItem{}}(VarI:SortId{}),inj{SortInt{}, SortKItem{}}(VarL:SortInt{})))),Lbl'-LT-'store'-GT-'{}(Lbl'Unds'Map'Unds'{}(VarMStore:SortMap{},Lbl'UndsPipe'-'-GT-Unds'{}(inj{SortInt{}, SortKItem{}}(VarL:SortInt{}),inj{SortString{}, SortKItem{}}(\dv{SortString{}}(" "))))),Lbl'-LT-'loc'-GT-'{}(Lbl'UndsPlus'Int'Unds'{}(VarL:SortInt{},\dv{SortInt{}}("1")))),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("69"), contentStartColumn{}("10"), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(69,10,72,39)"), UNIQUE'Unds'ID{}("27a2e53429c69e5cbdf5cd6c970b198ae261fb0243398050a46668542e4323d2")]
+
+// rule `<generatedTop>`(`<T>`(`<k>`(inj{Fun,KItem}(`funmain(){_}_KT-SYNTAX_Fun_Block`(B))~>DotVar2),_0,_1,_2),DotVar0)=>`<generatedTop>`(`<T>`(`<k>`(inj{Block,KItem}(B)~>DotVar2),_0,_1,_2),DotVar0) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(cd47da70c844d54f9f61df97a028d0762ff5ee54b965fb533143f81d1fb48385) contentStartColumn(10) contentStartLine(44) org.kframework.attributes.Location(Location(44,10,44,35)) org.kframework.attributes.Source(Source(/workspace/kt/./kt.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]) structural()]
+  alias rule23LHS{}(SortBlock{},SortGeneratedCounterCell{},SortK{},SortEnvCell{},SortStoreCell{},SortLocCell{}) : SortGeneratedTopCell{}
+  where rule23LHS{}(VarB:SortBlock{},VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}) :=
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortFun{}, SortKItem{}}(Lblfunmain'LParRParLBraUndsRBraUnds'KT-SYNTAX'Unds'Fun'Unds'Block{}(VarB:SortBlock{})),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})) []
+
+  axiom{} \rewrites{SortGeneratedTopCell{}} (
+    rule23LHS{}(VarB:SortBlock{},VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),
+    \and{SortGeneratedTopCell{}} (
+      \top{SortGeneratedTopCell{}}(), Lbl'-LT-'generatedTop'-GT-'{}(Lbl'-LT-'T'-GT-'{}(Lbl'-LT-'k'-GT-'{}(kseq{}(inj{SortBlock{}, SortKItem{}}(VarB:SortBlock{}),VarDotVar2:SortK{})),Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}),VarDotVar0:SortGeneratedCounterCell{})))
+  [org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)"), org'Stop'kframework'Stop'definition'Stop'Production{}("syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()]"), contentStartLine{}("44"), contentStartColumn{}("10"), structural{}(), org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(44,10,44,35)"), UNIQUE'Unds'ID{}("cd47da70c844d54f9f61df97a028d0762ff5ee54b965fb533143f81d1fb48385")]
 
 // rule `_<=String__STRING_Bool_String_String`(S1,S2)=>`notBool_`(`_<String__STRING_Bool_String_String`(S2,S1)) requires #token("true","Bool") ensures #token("true","Bool") [UNIQUE_ID(b845027eb9a8c978d2dfe3ec05a6eff77ba88b8f5c3ab2cb696a29aeae2db3b8) contentStartColumn(8) contentStartLine(616) org.kframework.attributes.Location(Location(616,8,616,63)) org.kframework.attributes.Source(Source(/usr/local/k/include/builtin/domains.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody [klabel(#ruleNoConditions) symbol()])]
   axiom{R} \implies{R} (
@@ -3797,6 +4126,162 @@ module KT
         Lbl'-LT-'T'-GT-'{}(LblinitKCell{}(VarInit:SortMap{}),LblinitEnvCell{}(),LblinitStoreCell{}(),LblinitLocCell{}())),
       \top{R}()))
   [initializer{}()]
+
+// rule isAExp(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'0:SortAExp{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortAExp{}, SortKItem{}}(Var'Unds'0:SortAExp{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisAExp{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isAExp(inj{AExp,KItem}(AExp))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisAExp{}(kseq{}(inj{SortAExp{}, SortKItem{}}(VarAExp:SortAExp{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
+// rule isAssigner(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'0:SortAssigner{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortAssigner{}, SortKItem{}}(Var'Unds'0:SortAssigner{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisAssigner{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isAssigner(inj{Assigner,KItem}(Assigner))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisAssigner{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(VarAssigner:SortAssigner{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
+// rule isBExp(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortBExp{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortBExp{}, SortKItem{}}(Var'Unds'1:SortBExp{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisBExp{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isBExp(inj{BExp,KItem}(BExp))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisBExp{}(kseq{}(inj{SortBExp{}, SortKItem{}}(VarBExp:SortBExp{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
+// rule isBlock(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortBlock{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortBlock{}, SortKItem{}}(Var'Unds'1:SortBlock{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisBlock{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isBlock(inj{Block,KItem}(Block))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisBlock{}(kseq{}(inj{SortBlock{}, SortKItem{}}(VarBlock:SortBlock{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
 
 // rule isBool(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
   axiom{R} \implies{R} (
@@ -4383,6 +4868,45 @@ module KT
       \top{R}()))
   []
 
+// rule isIds(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortIds{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortIds{}, SortKItem{}}(Var'Unds'1:SortIds{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisIds{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isIds(inj{Ids,KItem}(Ids))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisIds{}(kseq{}(inj{SortIds{}, SortKItem{}}(VarIds:SortIds{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
 // rule isInt(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
   axiom{R} \implies{R} (
     \and{R} (
@@ -4783,6 +5307,45 @@ module KT
       \top{R}()))
   []
 
+// rule isSExp(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'0:SortSExp{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortSExp{}, SortKItem{}}(Var'Unds'0:SortSExp{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisSExp{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isSExp(inj{SExp,KItem}(SExp))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisSExp{}(kseq{}(inj{SortSExp{}, SortKItem{}}(VarSExp:SortSExp{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
 // rule isSet(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
   axiom{R} \implies{R} (
     \and{R} (
@@ -4818,6 +5381,84 @@ module KT
     \and{R} (
       \equals{SortBool{},R} (
         LblisSet{}(kseq{}(inj{SortSet{}, SortKItem{}}(VarSet:SortSet{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
+// rule isSkip(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortSkip{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortSkip{}, SortKItem{}}(Var'Unds'1:SortSkip{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisSkip{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isSkip(inj{Skip,KItem}(Skip))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisSkip{}(kseq{}(inj{SortSkip{}, SortKItem{}}(VarSkip:SortSkip{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
+// rule isStmt(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortStmt{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortStmt{}, SortKItem{}}(Var'Unds'1:SortStmt{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisStmt{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isStmt(inj{Stmt,KItem}(Stmt))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisStmt{}(kseq{}(inj{SortStmt{}, SortKItem{}}(VarStmt:SortStmt{}),dotk{}())),
         \dv{SortBool{}}("true")),
       \top{R}()))
   []
@@ -5095,6 +5736,123 @@ module KT
       \top{R}()))
   []
 
+// rule isVarDeclaration(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortVarDeclaration{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(Var'Unds'1:SortVarDeclaration{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisVarDeclaration{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isVarDeclaration(inj{VarDeclaration,KItem}(VarDeclaration))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisVarDeclaration{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(VarVarDeclaration:SortVarDeclaration{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
+// rule isVarMod(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortVarMod{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortVarMod{}, SortKItem{}}(Var'Unds'1:SortVarMod{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisVarMod{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isVarMod(inj{VarMod,KItem}(VarMod))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisVarMod{}(kseq{}(inj{SortVarMod{}, SortKItem{}}(VarVarMod:SortVarMod{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
+// rule isVarType(K)=>#token("false","Bool") requires #token("true","Bool") ensures #token("true","Bool") [owise()]
+  axiom{R} \implies{R} (
+    \and{R} (
+      \not{R} (
+        \or{R} (
+          \exists{R} (Var'Unds'1:SortVarType{},
+            \and{R} (
+              \top{R}(),
+              \and{R} (
+                \ceil{SortK{}, R} (
+                  \and{SortK{}} (
+                    VarK:SortK{},
+                    kseq{}(inj{SortVarType{}, SortKItem{}}(Var'Unds'1:SortVarType{}),dotk{}())
+                )),
+                \top{R} ()
+              )
+          )),
+          \bottom{R}()
+        )
+      ),
+      \top{R}()
+    ),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisVarType{}(VarK:SortK{}),
+        \dv{SortBool{}}("false")),
+      \top{R}()))
+  [owise{}()]
+
+// rule isVarType(inj{VarType,KItem}(VarType))=>#token("true","Bool") requires #token("true","Bool") ensures #token("true","Bool") []
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBool{},R} (
+        LblisVarType{}(kseq{}(inj{SortVarType{}, SortKItem{}}(VarVarType:SortVarType{}),dotk{}())),
+        \dv{SortBool{}}("true")),
+      \top{R}()))
+  []
+
 // rule `minInt(_,_)_INT-COMMON_Int_Int_Int`(I1,I2)=>I1 requires `_<=Int_`(I1,I2) ensures #token("true","Bool") [UNIQUE_ID(38650d96d25c007c33eb715dd4181e4a42c220f5e5176d70f1681d38a912778c) contentStartColumn(8) contentStartLine(468) org.kframework.attributes.Location(Location(468,8,468,57)) org.kframework.attributes.Source(Source(/usr/local/k/include/builtin/domains.k)) org.kframework.definition.Production(syntax #RuleContent ::= #RuleBody "requires" K [klabel(#ruleRequires) symbol()])]
   axiom{R} \implies{R} (
     \equals{SortBool{},R}(
@@ -5172,6 +5930,46 @@ module KT
         VarK0:SortInt{}),
       \top{R}()))
   []
+
+// rule `project:AExp`(inj{AExp,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortAExp{},R} (
+        Lblproject'Coln'AExp{}(kseq{}(inj{SortAExp{}, SortKItem{}}(VarK:SortAExp{}),dotk{}())),
+        VarK:SortAExp{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:Assigner`(inj{Assigner,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortAssigner{},R} (
+        Lblproject'Coln'Assigner{}(kseq{}(inj{SortAssigner{}, SortKItem{}}(VarK:SortAssigner{}),dotk{}())),
+        VarK:SortAssigner{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:BExp`(inj{BExp,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBExp{},R} (
+        Lblproject'Coln'BExp{}(kseq{}(inj{SortBExp{}, SortKItem{}}(VarK:SortBExp{}),dotk{}())),
+        VarK:SortBExp{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:Block`(inj{Block,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortBlock{},R} (
+        Lblproject'Coln'Block{}(kseq{}(inj{SortBlock{}, SortKItem{}}(VarK:SortBlock{}),dotk{}())),
+        VarK:SortBlock{}),
+      \top{R}()))
+  [projection{}()]
 
 // rule `project:Bool`(inj{Bool,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
   axiom{R} \implies{R} (
@@ -5323,6 +6121,16 @@ module KT
       \top{R}()))
   [projection{}()]
 
+// rule `project:Ids`(inj{Ids,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortIds{},R} (
+        Lblproject'Coln'Ids{}(kseq{}(inj{SortIds{}, SortKItem{}}(VarK:SortIds{}),dotk{}())),
+        VarK:SortIds{}),
+      \top{R}()))
+  [projection{}()]
+
 // rule `project:Int`(inj{Int,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
   axiom{R} \implies{R} (
     \top{R}(),
@@ -5413,6 +6221,16 @@ module KT
       \top{R}()))
   [projection{}()]
 
+// rule `project:SExp`(inj{SExp,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortSExp{},R} (
+        Lblproject'Coln'SExp{}(kseq{}(inj{SortSExp{}, SortKItem{}}(VarK:SortSExp{}),dotk{}())),
+        VarK:SortSExp{}),
+      \top{R}()))
+  [projection{}()]
+
 // rule `project:Set`(inj{Set,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
   axiom{R} \implies{R} (
     \top{R}(),
@@ -5420,6 +6238,26 @@ module KT
       \equals{SortSet{},R} (
         Lblproject'Coln'Set{}(kseq{}(inj{SortSet{}, SortKItem{}}(VarK:SortSet{}),dotk{}())),
         VarK:SortSet{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:Skip`(inj{Skip,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortSkip{},R} (
+        Lblproject'Coln'Skip{}(kseq{}(inj{SortSkip{}, SortKItem{}}(VarK:SortSkip{}),dotk{}())),
+        VarK:SortSkip{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:Stmt`(inj{Stmt,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortStmt{},R} (
+        Lblproject'Coln'Stmt{}(kseq{}(inj{SortStmt{}, SortKItem{}}(VarK:SortStmt{}),dotk{}())),
+        VarK:SortStmt{}),
       \top{R}()))
   [projection{}()]
 
@@ -5490,6 +6328,36 @@ module KT
       \equals{SortTCellOpt{},R} (
         Lblproject'Coln'TCellOpt{}(kseq{}(inj{SortTCellOpt{}, SortKItem{}}(VarK:SortTCellOpt{}),dotk{}())),
         VarK:SortTCellOpt{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:VarDeclaration`(inj{VarDeclaration,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortVarDeclaration{},R} (
+        Lblproject'Coln'VarDeclaration{}(kseq{}(inj{SortVarDeclaration{}, SortKItem{}}(VarK:SortVarDeclaration{}),dotk{}())),
+        VarK:SortVarDeclaration{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:VarMod`(inj{VarMod,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortVarMod{},R} (
+        Lblproject'Coln'VarMod{}(kseq{}(inj{SortVarMod{}, SortKItem{}}(VarK:SortVarMod{}),dotk{}())),
+        VarK:SortVarMod{}),
+      \top{R}()))
+  [projection{}()]
+
+// rule `project:VarType`(inj{VarType,KItem}(K))=>K requires #token("true","Bool") ensures #token("true","Bool") [projection()]
+  axiom{R} \implies{R} (
+    \top{R}(),
+    \and{R} (
+      \equals{SortVarType{},R} (
+        Lblproject'Coln'VarType{}(kseq{}(inj{SortVarType{}, SortKItem{}}(VarK:SortVarType{}),dotk{}())),
+        VarK:SortVarType{}),
       \top{R}()))
   [projection{}()]
 
@@ -5584,6 +6452,24 @@ module KT
 
 // priority groups
   alias priorityLE50{}() : SortGeneratedTopCell{}
-  where priorityLE50{}() := \bottom{SortGeneratedTopCell{}}() []
+  where priorityLE50{}() := \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortLocCell{},rule6LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{})))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},\exists{SortGeneratedTopCell{}}(VarV:SortInt{},\exists{SortGeneratedTopCell{}}(VarXs:SortIds{},\exists{SortGeneratedTopCell{}}(Var'Unds'6:SortVarMod{},\exists{SortGeneratedTopCell{}}(Var'Unds'8:SortAExp{},rule7LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortInt{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortAExp{}))))))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortInt{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'3:SortLocCell{},rule8LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortInt{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},\exists{SortGeneratedTopCell{}}(VarV:SortInt{},rule9LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortInt{})))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},\exists{SortGeneratedTopCell{}}(VarV:SortBool{},\exists{SortGeneratedTopCell{}}(VarXs:SortIds{},\exists{SortGeneratedTopCell{}}(Var'Unds'6:SortVarMod{},\exists{SortGeneratedTopCell{}}(Var'Unds'8:SortBExp{},rule10LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortBool{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortBExp{}))))))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortBool{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'3:SortLocCell{},rule11LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortBool{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},\exists{SortGeneratedTopCell{}}(VarV:SortBool{},rule12LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortBool{})))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},\exists{SortGeneratedTopCell{}}(VarV:SortString{},\exists{SortGeneratedTopCell{}}(VarXs:SortIds{},\exists{SortGeneratedTopCell{}}(Var'Unds'6:SortVarMod{},\exists{SortGeneratedTopCell{}}(Var'Unds'8:SortSExp{},rule13LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortString{},VarXs:SortIds{},Var'Unds'6:SortVarMod{},Var'Unds'8:SortSExp{}))))))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortString{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'3:SortLocCell{},rule14LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortString{},Var'Unds'1:SortEnvCell{},Var'Unds'2:SortStoreCell{},Var'Unds'3:SortLocCell{}))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},\exists{SortGeneratedTopCell{}}(VarV:SortString{},rule15LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarV:SortString{})))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortLocCell{},rule16LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{})))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},rule17LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},\exists{SortGeneratedTopCell{}}(VarXs:SortIds{},\exists{SortGeneratedTopCell{}}(Var'Unds'5:SortVarMod{},rule18LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{},VarXs:SortIds{},Var'Unds'5:SortVarMod{}))))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortLocCell{},rule19LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{})))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},rule20LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortLocCell{},rule21LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{})))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(VarI:SortId{},\exists{SortGeneratedTopCell{}}(VarL:SortInt{},\exists{SortGeneratedTopCell{}}(VarMEnv:SortMap{},\exists{SortGeneratedTopCell{}}(VarMStore:SortMap{},rule22LHS{}(VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},VarI:SortId{},VarL:SortInt{},VarMEnv:SortMap{},VarMStore:SortMap{}))))))), \or{SortGeneratedTopCell{}}(
+    \exists{SortGeneratedTopCell{}}(VarB:SortBlock{},\exists{SortGeneratedTopCell{}}(VarDotVar0:SortGeneratedCounterCell{},\exists{SortGeneratedTopCell{}}(VarDotVar2:SortK{},\exists{SortGeneratedTopCell{}}(Var'Unds'0:SortEnvCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'1:SortStoreCell{},\exists{SortGeneratedTopCell{}}(Var'Unds'2:SortLocCell{},rule23LHS{}(VarB:SortBlock{},VarDotVar0:SortGeneratedCounterCell{},VarDotVar2:SortK{},Var'Unds'0:SortEnvCell{},Var'Unds'1:SortStoreCell{},Var'Unds'2:SortLocCell{}))))))), \bottom{SortGeneratedTopCell{}}())))))))))))))))))) []
 
-endmodule [org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(16,1,22,9)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)")]
+endmodule [org'Stop'kframework'Stop'attributes'Stop'Location{}("Location(126,1,132,9)"), org'Stop'kframework'Stop'attributes'Stop'Source{}("Source(/workspace/kt/./kt.k)")]
