@@ -2,7 +2,7 @@ default: fail
 specializations:
 - - Lbl'Hash'tempFile{}
   - action:
-    - 2997
+    - 3671
     - - - ['0', '1']
         - STRING.String
   - [STRING.String, INT.Int]

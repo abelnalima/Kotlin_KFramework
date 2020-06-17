@@ -8,18 +8,22 @@ specializations:
         specializations:
         - - inj{SortSExp{}, SortKItem{}}
           - action:
-            - 3028
+            - 3704
             - - - ['0', '0', '1']
                 - STRING.String
           - [STRING.String]
-        - - inj{SortString{}, SortKItem{}}
-          - action:
-            - 3028
-            - - - &id001 ['0', '1']
+        - - inj{SortId{}, SortKItem{}}
+          - &id001
+            action:
+            - 3704
+            - - - &id002 ['0', '1']
                 - STRING.String
           - [STRING.String]
+        - - inj{SortString{}, SortKItem{}}
+          - *id001
+          - [STRING.String]
         sort: STRING.String
-        occurrence: *id001
+        occurrence: *id002
       - []
     sort: STRING.String
     occurrence: ['1', '1']

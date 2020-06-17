@@ -8,18 +8,27 @@ specializations:
         specializations:
         - - inj{SortStmt{}, SortKItem{}}
           - action:
-            - 3031
+            - 3707
             - - - ['0', '0', '1']
                 - STRING.String
           - [STRING.String]
         - - inj{SortAssigner{}, SortKItem{}}
           - &id001
             action:
-            - 3031
+            - 3707
             - - - &id002 ['0', '1']
                 - STRING.String
           - [STRING.String]
+        - - inj{SortAExpMod{}, SortKItem{}}
+          - *id001
+          - [STRING.String]
         - - inj{SortSkip{}, SortKItem{}}
+          - *id001
+          - [STRING.String]
+        - - inj{SortBExp{}, SortKItem{}}
+          - *id001
+          - [STRING.String]
+        - - inj{SortId{}, SortKItem{}}
           - *id001
           - [STRING.String]
         - - inj{SortAExp{}, SortKItem{}}
@@ -28,9 +37,21 @@ specializations:
         - - inj{SortVarDeclaration{}, SortKItem{}}
           - *id001
           - [STRING.String]
+        - - inj{SortBool{}, SortKItem{}}
+          - *id001
+          - [BOOL.Bool]
+        - - inj{SortIdAssigner{}, SortKItem{}}
+          - *id001
+          - [STRING.String]
+        - - inj{SortSExp{}, SortKItem{}}
+          - *id001
+          - [STRING.String]
         - - inj{SortInt{}, SortKItem{}}
           - *id001
           - [INT.Int]
+        - - inj{SortString{}, SortKItem{}}
+          - *id001
+          - [STRING.String]
         sort: STRING.String
         occurrence: *id002
       - []

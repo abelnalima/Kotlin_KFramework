@@ -2,7 +2,7 @@ default: fail
 specializations:
 - - Lbl'Hash'unknownIOError{}
   - action:
-    - 2998
+    - 3672
     - - - ['0', '1']
         - INT.Int
   - [INT.Int]

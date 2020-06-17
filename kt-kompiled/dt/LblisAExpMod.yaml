@@ -1,16 +1,18 @@
-default: fail
+default: &id001
+  action:
+  - 3573
+  - []
 specializations:
 - - kseq{}
-  - default: fail
+  - default: *id001
     specializations:
     - - dotk{}
-      - default: fail
+      - default: *id001
         specializations:
-        - - inj{SortGeneratedCounterCell{}, SortKItem{}}
+        - - inj{SortAExpMod{}, SortKItem{}}
           - action:
-            - 3684
-            - - - ['0', '0', '1']
-                - STRING.String
+            - 3574
+            - []
           - [STRING.String]
         sort: STRING.String
         occurrence: ['0', '1']

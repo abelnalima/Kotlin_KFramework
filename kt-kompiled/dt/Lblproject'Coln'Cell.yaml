@@ -8,14 +8,14 @@ specializations:
         specializations:
         - - inj{SortCell{}, SortKItem{}}
           - action:
-            - 3004
+            - 3679
             - - - ['0', '0', '1']
                 - STRING.String
           - [STRING.String]
         - - inj{SortLocCell{}, SortKItem{}}
           - &id001
             action:
-            - 3004
+            - 3679
             - - - &id002 ['0', '1']
                 - STRING.String
           - [STRING.String]
