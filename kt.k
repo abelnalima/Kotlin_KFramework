@@ -12,6 +12,7 @@ module KT-SYNTAX
                 | VarDeclaration
                 | Assigner
                 | IdAssigner
+                | IfStmt
                 | AExp
                 | AExpMod
                 | BExp
@@ -28,7 +29,7 @@ module KT-SYNTAX
                         | VarMod Ids "String"
                         //| VarMod Ids VarType
 
-    syntax ValueType ::= Int | Bool | String
+    //syntax ValueType ::= Int | Bool | String //| Id
 
     syntax Ids ::= List{Id, ","}
 
@@ -37,9 +38,9 @@ module KT-SYNTAX
                     | VarDeclaration "=" SExp [strict(2)]
 
     syntax IdAssigner ::= Id "=" AExp [strict(2)]
-                    > Id "=" BExp [strict(2)]
+                    | Id "=" BExp [strict(2)]
                     | Id "=" SExp [strict(2)]
-                    | Id "=" ValueType
+                    //| Id "=" ValueType
 
     syntax AExp ::= Int
                 | Id
@@ -50,9 +51,7 @@ module KT-SYNTAX
                 | "(" AExp ")" [bracket]
 
     syntax AExpMod ::= Id "++"
-                //| Id"++"
                 | Id "--"
-                //| Id"--"
 
     syntax BExp ::= Bool
                 | Id
@@ -70,6 +69,13 @@ module KT-SYNTAX
                 | Id
                 | SExp "+" SExp
 
+    syntax IfStmt ::= "if" "(" BExp ")" Block [strict(1)]
+                | "if" "(" BExp ")" Block ElseIfStmt [strict(1)]
+
+    syntax ElseIfStmt ::= "else if" "(" BExp ")" Block
+                    | "else if" "(" BExp ")" Block ElseIfStmt
+                    | "else" Block
+
     /* REWRITE RULES */
 
     rule Skip => .
@@ -77,6 +83,8 @@ module KT-SYNTAX
     rule fun main() {B:Block} => B [structural]
 
     rule S1:Stmt S2:Stmt => S1 ~> S2 [structural]
+
+    //rule I1:Id = I2:Id => I2 ~> I1 = I2
 
     rule V:VarMod .Ids Int => Skip
     rule V:VarMod .Ids Boolean => Skip
@@ -86,6 +94,15 @@ module KT-SYNTAX
     rule V:VarMod .Ids String = _:String => Skip
     //rule Vm:VarMod .Ids T:VarType => Skip
 
+    rule if (true) { S:Stmt } => S
+    rule if (false) { _ } => Skip
+    rule if (true) { S:Stmt } Sif:ElseIfStmt => S
+    rule if (false) { _ } S:ElseIfStmt => S
+    rule else if (E:BExp) { S1:Stmt } S2:ElseIfStmt => if (E) { S1 } S2
+    rule else if (E:BExp) { S:Stmt } => if (E) { S }
+    rule else { S:Stmt } => S
+    rule if (true) { S:Stmt } else _ => S
+    rule if (false) { _ } else { S:Stmt } => S
 
     /* ARITHMETHIC EXPRESSIONS RULES */
 
@@ -185,13 +202,31 @@ module KT-SYNTAX
 
     /* MEMORY SEARCH RULES */
 
-    rule <k> I:Id = V:ValueType => Skip ... </k>
+    /*rule <k> I:Id = V:ValueType => Skip ... </k>
+        <env> ... I |-> L ... </env>
+        <store> ... L |-> (_ => V) ... </store>*/
+
+    rule <k> I:Id = V:AExp => Skip ... </k>
+        <env> ... I |-> L ... </env>
+        <store> ... L |-> (_ => V) ... </store>
+
+    rule <k> I:Id = V:BExp => Skip ... </k>
+        <env> ... I |-> L ... </env>
+        <store> ... L |-> (_ => V) ... </store>
+
+    rule <k> I:Id = V:SExp => Skip ... </k>
         <env> ... I |-> L ... </env>
         <store> ... L |-> (_ => V) ... </store>
     
     rule <k> I:Id => V ... </k>
         <env> ... I |-> L ... </env>
         <store> ... L |-> V ... </store>
+
+    //rule I1:Id = I2:Id => I2 ~> I1 = I2
+
+    /*rule <k> I1:Id = I2:Id => I1 = V:Int ... </k>
+        <env> ... I2 |-> L ... </env>
+        <store> ... L |-> V ... </store>*/
 
     /* CONFIGURATIONS */
 
