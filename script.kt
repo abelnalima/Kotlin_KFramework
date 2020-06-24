@@ -1,9 +1,16 @@
 fun main() {
 
-    var x Int = 5
+    //fun sum(a) : Int {
+     //   var x = a
+        //var y = b
+    //}
+    
+    //sum(10)
 
-    if(5 > 2 && 5 > 10){
-        x = 10
-    }
+    //sum()
 
+    //var x = 1
+    //var y = x
+
+    var x, y String = "a"
 }
