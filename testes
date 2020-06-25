@@ -1,0 +1,62 @@
+
+//DECLARACAO VARIAVEL
+
+    var x1 : Int
+    var x2 : Int = 10
+    var x3 = 15
+    val x4 : Int
+    val x5 : Int = 10
+    val x6 = 15
+    var y1 : String
+    var y2 : String = "Ola Mundo"
+    var y3 = "OK"
+    val y4 : String
+    val y5 : String = "Ola Mundo"
+    val y6 = "OK"
+    var z1 : Boolean
+    //val z2 : Boolean = true
+    var z3 = true
+    val z4 : Boolean
+    //val z5 : Boolean = true
+    val z6 = true
+
+//IF ELSEIF ELSEIF
+
+    var x : Int = 5
+    if (x > 5) {
+        print("x maior que 5")
+    } else if (x < 5) {
+        print("x menor que 5")
+    } else {
+        print("x igual a 5")
+    }
+
+//WHILE
+
+    var x : Int
+    while (x < 10){
+        x++
+    }
+
+//DO WHILE
+    var x : Int
+    do {
+        x++
+    } while (x < 10)
+
+//FOREACH
+
+    foreach (x in [1, 2, 3, 4]){
+        x++
+        print(1, 2, 3, 4)
+    }
+
+//FUNCAO
+
+    fun calc(a, b) {
+        var x = a
+        var y = b
+        var z = a + b
+    }
+    
+    calc10, 20)

@@ -8,7 +8,7 @@ specializations:
         specializations:
         - - inj{SortAExpMod{}, SortKItem{}}
           - action:
-            - 4039
+            - 4395
             - - - ['0', '0', '1']
                 - STRING.String
           - [STRING.String]

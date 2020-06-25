@@ -8,13 +8,13 @@ specializations:
         specializations:
         - - inj{SortBExp{}, SortKItem{}}
           - action:
-            - 4042
+            - 4398
             - - - ['0', '0', '1']
                 - STRING.String
           - [STRING.String]
         - - inj{SortBool{}, SortKItem{}}
           - action:
-            - 4042
+            - 4398
             - - - &id001 ['0', '1']
                 - STRING.String
           - [BOOL.Bool]

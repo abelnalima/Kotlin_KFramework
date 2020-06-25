@@ -6,9 +6,9 @@ specializations:
     - - dotk{}
       - default: fail
         specializations:
-        - - inj{SortIds{}, SortKItem{}}
+        - - inj{SortPrint{}, SortKItem{}}
           - action:
-            - 4072
+            - 4449
             - - - ['0', '0', '1']
                 - STRING.String
           - [STRING.String]

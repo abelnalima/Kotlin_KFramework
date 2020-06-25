@@ -1,16 +1,11 @@
 fun main() {
 
-    //fun sum(a) : Int {
-     //   var x = a
-        //var y = b
-    //}
+    fun calc(a, b) {
+        var x = a
+        var y = b
+        var z = a + b
+    }
     
-    //sum(10)
+    calc(10, 20)
 
-    //sum()
-
-    //var x = 1
-    //var y = x
-
-    var x, y String = "a"
 }
